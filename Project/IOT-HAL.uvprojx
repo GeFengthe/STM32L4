@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L475xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\libraries;..\libraries\Inc\Legacy;..\libraries\Inc;..\User;..\System\delay;..\System\sys;..\System\usart</IncludePath>
+              <IncludePath>..\libraries;..\libraries\Inc\Legacy;..\libraries\Inc;..\User;..\System\delay;..\System\sys;..\System\usart;..\BSP\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -600,6 +600,24 @@
         </Group>
         <Group>
           <GroupName>Document</GroupName>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\src\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\src\spi.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>APP</GroupName>
         </Group>
       </Groups>
     </Target>

@@ -2,12 +2,31 @@
 #include "sys.h"
 #include "delay.h"
 #include "stm32l4xx_hal_gpio.h"
+#include "lcd.h"
+#include "usart.h"
 void LED_Init(void);
+
+void test_lcd(void)
+{
+    u8 tmp[3]={0};
+    tmp[0]=SPI3_ReadWriteByte(0x04);
+    tmp[1]=SPI3_ReadWriteByte(0x00);
+    tmp[2]=SPI3_ReadWriteByte(0x00);
+    printf("lcd_id=0x%x%x%x\r\n",tmp[0],tmp[1],tmp[2]);
+    
+}
 int main()
 {
     HAL_Init();
     SystemClock_Config();
+    delay_init(80);
     LED_Init();
+    uart_init(115200);
+    printf("--this is hal\r\n");
+    LCD_Init();
+    printf("--this is now hal\r\n");
+//    test_lcd();
+//    LCD_Draw_ColorPoint(200,200,0xFFFF);
     while(1)
     {
         

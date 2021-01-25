@@ -2,7 +2,7 @@
 .\objects\main.o: ..\User\stm32l4xx.h
 .\objects\main.o: ..\User\stm32l475xx.h
 .\objects\main.o: ..\libraries\core_cm4.h
-.\objects\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: ..\libraries\core_cmInstr.h
 .\objects\main.o: ..\libraries\cmsis_armcc.h
 .\objects\main.o: ..\libraries\core_cmFunc.h
@@ -16,7 +16,7 @@
 .\objects\main.o: ..\libraries\Inc\stm32l4xx_hal_def.h
 .\objects\main.o: ..\User\stm32l4xx.h
 .\objects\main.o: ..\libraries\Inc\Legacy/stm32_hal_legacy.h
-.\objects\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\main.o: ..\libraries\Inc\stm32l4xx_hal_rcc_ex.h
 .\objects\main.o: ..\libraries\Inc\stm32l4xx_hal_gpio.h
 .\objects\main.o: ..\libraries\Inc\stm32l4xx_hal_gpio_ex.h
@@ -88,3 +88,7 @@
 .\objects\main.o: ..\libraries\Inc\stm32l4xx_hal_gfxmmu.h
 .\objects\main.o: ..\System\sys\sys.h
 .\objects\main.o: ..\System\delay\delay.h
+.\objects\main.o: ..\BSP\inc\lcd.h
+.\objects\main.o: ..\BSP\inc\spi.h
+.\objects\main.o: ..\System\usart\usart.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

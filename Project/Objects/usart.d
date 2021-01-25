@@ -4,7 +4,7 @@
 .\objects\usart.o: ..\User\stm32l4xx.h
 .\objects\usart.o: ..\User\stm32l475xx.h
 .\objects\usart.o: ..\libraries\core_cm4.h
-.\objects\usart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usart.o: ..\libraries\core_cmInstr.h
 .\objects\usart.o: ..\libraries\cmsis_armcc.h
 .\objects\usart.o: ..\libraries\core_cmFunc.h
@@ -18,7 +18,7 @@
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_def.h
 .\objects\usart.o: ..\User\stm32l4xx.h
 .\objects\usart.o: ..\libraries\Inc\Legacy/stm32_hal_legacy.h
-.\objects\usart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\usart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_rcc_ex.h
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_gpio.h
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_gpio_ex.h
@@ -88,5 +88,5 @@
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_pcd_ex.h
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_hcd.h
 .\objects\usart.o: ..\libraries\Inc\stm32l4xx_hal_gfxmmu.h
-.\objects\usart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usart.o: ..\System\delay\delay.h

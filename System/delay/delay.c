@@ -201,14 +201,17 @@ void delay_us(u32 nus)
  *
  * @return  void
  */
+//void delay_ms(u16 nms)
+//{
+//    u32 i;
+
+//    for(i = 0; i < nms; i++) delay_us(1000);
+//}
+
 void delay_ms(u16 nms)
 {
-    u32 i;
-
-    for(i = 0; i < nms; i++) delay_us(1000);
+    HAL_Delay(nms);
 }
-
-
 
 
 
