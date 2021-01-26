@@ -2678,7 +2678,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\User\main.c)(0x600EF3AB)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x60104D07)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\User\stm32l4xx.h)(0x600D3011)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -2766,8 +2766,8 @@ I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\System\sys\sys.h)(0x600D3011)
 I (..\System\delay\delay.h)(0x5BD4398A)
-I (..\BSP\inc\lcd.h)(0x600DA55C)
-I (..\BSP\inc\spi.h)(0x600D57FB)
+I (..\BSP\inc\lcd.h)(0x60104B92)
+I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\System\usart\usart.h)(0x600D3011)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 F (..\User\stm32l4xx_it.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_it.o --omf_browse .\objects\stm32l4xx_it.crf --depend .\objects\stm32l4xx_it.d)
@@ -2857,9 +2857,9 @@ I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\User\stm32l4xx_it.h)(0x600D3011)
-F (..\BSP\src\lcd.c)(0x600EF47A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
-I (..\BSP\inc\lcd.h)(0x600DA55C)
-I (..\BSP\inc\spi.h)(0x600D57FB)
+F (..\BSP\src\lcd.c)(0x60104C6B)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (..\BSP\inc\lcd.h)(0x60104B92)
+I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\User\stm32l4xx.h)(0x600D3011)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -2948,8 +2948,9 @@ I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\System\delay\delay.h)(0x5BD4398A)
 I (..\System\sys\sys.h)(0x600D3011)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-F (..\BSP\src\spi.c)(0x600EF382)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
-I (..\BSP\inc\spi.h)(0x600D57FB)
+I (..\BSP\inc\font.h)(0x60104A9B)
+F (..\BSP\src\spi.c)(0x6010105C)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\User\stm32l4xx.h)(0x600D3011)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)

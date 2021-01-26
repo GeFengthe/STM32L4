@@ -25,8 +25,8 @@ int main()
     printf("--this is hal\r\n");
     LCD_Init();
     printf("--this is now hal\r\n");
-//    test_lcd();
-//    LCD_Draw_ColorPoint(200,200,0xFFFF);
+    LCD_ShowChar(120,120,'A',32);
+    LCD_ShowChar(0,121,'b',32);
     while(1)
     {
         

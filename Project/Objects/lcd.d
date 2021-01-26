@@ -91,3 +91,4 @@
 .\objects\lcd.o: ..\System\delay\delay.h
 .\objects\lcd.o: ..\System\sys\sys.h
 .\objects\lcd.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lcd.o: ..\BSP\inc\font.h
