@@ -35,6 +35,8 @@
 ".\objects\stm32l4xx_it.o"
 ".\objects\lcd.o"
 ".\objects\spi.o"
+".\objects\esp8266.o"
+".\objects\timer.o"
 ".\objects\bsp.o"
 ".\objects\os_app_hooks.o"
 ".\objects\cpu_core.o"
