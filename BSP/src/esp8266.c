@@ -14,7 +14,9 @@ uint16_t USART2_RX_STA =0;              //接收结束标志
 static uint8_t USART2_TX_BUF[1024];     //发送BUFF
 uint8_t USART2_RX_BUF[1024];
 
-
+const char sta[]="AT+CWMODE=1";         //STA 模式
+const char ap[] ="AT+CWMODE=2";         //AP 模式
+const char sta_ap[] ="AT+CWMODE=3";     //STA_AP模式
 
 //typedef struct wifi{
 //    const u8 * wifista_ssid,
@@ -116,7 +118,11 @@ uint8_t * atk_8266_check_cmd(uint8_t *src)
     }
     return (uint8_t *)strx;
 }
-
+/*
+CMD :指令
+ack：应答 无应答即是NULL
+waittime：超时时长 单位10ms
+*/
 
 uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 {
@@ -143,6 +149,33 @@ uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
             res =1;
     }
     return res;
+}
+
+/*
+ESP8266模式选择函数
+mode :模式选择 AP STA   AP+STA
+*/
+u8 esp_8266_mode(char *mode)
+{
+    u8 ret =0;
+    u8 *p;
+    p =(u8 *)mode;
+    if(atk_8266_send_cmd(p,(u8 *)"OK",60))
+    {
+        ret =1;
+    }
+    if(atk_8266_send_cmd((u8*)"AT+RST",(u8*)"OK",60))               //重启生效
+    {
+        ret =1;
+    }
+    return ret;
+}
+u8 esp_8266_connect(char *ssid,char *pass_word)
+{
+    u8 ret =0;
+    u8 *p;
+    sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
+    
 }
 
 //连接wifi
