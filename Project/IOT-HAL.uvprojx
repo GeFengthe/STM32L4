@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L475xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\libraries;..\libraries\Inc\Legacy;..\libraries\Inc;..\User;..\System\delay;..\System\sys;..\System\usart;..\BSP\inc;..\UCOSIII\BSP;..\UCOSIII\CONFIG;..\UCOSIII\uC-CPU;..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView;..\UCOSIII\uC-LIB;..\UCOSIII\uCOS-III\Source;..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView</IncludePath>
+              <IncludePath>..\libraries;..\libraries\Inc\Legacy;..\libraries\Inc;..\User;..\System\delay;..\System\sys;..\System\usart;..\BSP\inc;..\UCOSIII\BSP;..\UCOSIII\CONFIG;..\UCOSIII\uC-CPU;..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView;..\UCOSIII\uC-LIB;..\UCOSIII\uCOS-III\Source;..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView;..\app\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -628,6 +628,13 @@
         </Group>
         <Group>
           <GroupName>APP</GroupName>
+          <Files>
+            <File>
+              <FileName>mqtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\src\mqtt.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>UC/OS_III-BSP</GroupName>
