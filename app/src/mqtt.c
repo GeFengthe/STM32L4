@@ -56,13 +56,20 @@ const u8 parket_subAck[] ={0x90,0x03};
 //加密的密钥：DeviceSecret
 
 
+#define     BYTE0(temp)                        (*(uint8_t *)(&temp))
+#define     BYTE1(temp)                        (*(uint8_t *)(&temp)+1)
+#define     BYTE2(temp)                        (*(uint8_t *)(&temp)+2)
+#define     BYTE3(temp)                        (*(uint8_t *)(&temp)+3)
+
+
 /*
 函数功能: 登录服务器
 函数返回值: 0表示成功 1表示失败
 */
-u8 MQTT_Connect(char *ClientID,char *Username,char *Password)
+u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
 {
     u8 i,j;
+    u8 encodedByte;
     int ClientIDlen =strlen(ClientID);
     int Usernamelen =strlen(Username);
     int Passwordlen =strlen(Password);
@@ -72,6 +79,67 @@ u8 MQTT_Connect(char *ClientID,char *Username,char *Password)
     Datalen = 10+(ClientIDlen+2)+(Usernamelen+2)+(Passwordlen+2);
     //固定报头
 	//控制报文类型
-    mqtt_txbuf[mqtt_txlen++]=0x10;                                
+    mqtt_txbuf[mqtt_txlen++]=0x10;
+    do{
+        encodedByte =Datalen %128;
+        Datalen =Datalen/128;
+        if(Datalen >0)
+            encodedByte =encodedByte |128;                  //把最高为置1表示还有延续字节
+        mqtt_txbuf[mqtt_txlen++] =encodedByte;
+    }while(Datalen>0);
+    
+    //可变报头  (包含四个字段 协议名(protocol name) 协议级别(protocol level) 连接标志(Connect Flags) 保持连接(keep alive)
+    //协议名
+    mqtt_txbuf[mqtt_txlen++] =0;
+    mqtt_txbuf[mqtt_txlen++] =4;
+    mqtt_txbuf[mqtt_txlen++] ='M';
+    mqtt_txbuf[mqtt_txlen++] ='Q';
+    mqtt_txbuf[mqtt_txlen++] ='T';
+    mqtt_txbuf[mqtt_txlen++] ='T';
+    
+    //协议级别 对于3.1.1版本 的协议级别是的值是4(0x04);
+    mqtt_txbuf[mqtt_txlen++] =0x04;
+    
+    //连接标志
+    mqtt_txbuf[mqtt_txlen++] =0xc2;
+    //保持连接 keep alive 是一个以秒为单位的时间间隔，表示为一个16位的字 ，它是指在客户端发送
+    mqtt_txbuf[mqtt_txlen++] =0x00;
+    mqtt_txbuf[mqtt_txlen++] =0x64;         //100s一个心跳包
+    
+    //客户端ID有效载荷字段
+    mqtt_txbuf[mqtt_txlen++] =BYTE1(ClientIDlen);                       // Client ID length MSB
+    mqtt_txbuf[mqtt_txlen++] =BYTE0(ClientIDlen);                       // Client ID length LSB
+    memcpy(&mqtt_txbuf[mqtt_txlen],ClientID,ClientIDlen);
+    mqtt_txlen +=ClientIDlen;
+    
+    //用户名有效载荷字段
+    if(Usernamelen>0)
+    {
+        mqtt_txbuf[mqtt_txlen++] =BYTE1(Usernamelen);
+        mqtt_txbuf[mqtt_txlen++] =BYTE0(Usernamelen);
+        memcpy(&mqtt_txbuf[mqtt_txlen],Username,Usernamelen);
+        mqtt_txlen +=Usernamelen;
+    }
+    //密码有效载荷字段
+    if(Passwordlen>0)
+    {
+        mqtt_txbuf[mqtt_txlen++] =BYTE1(Passwordlen);
+        mqtt_txbuf[mqtt_txlen++] =BYTE0(Passwordlen);
+        memcpy(&mqtt_txbuf[mqtt_txlen],Password,Passwordlen);
+        mqtt_txlen +=Passwordlen;
+    }   
 }
+
+//MQTT发布数据打包函数
+//topic   主题 
+//message 消息
+//qos     消息等级 
+u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
+{
+    static u16 id=0;
+    int topicLength =strlen(topic);
+    int messageLength =strlen(message);
+    int Datalen;
+}
+
 

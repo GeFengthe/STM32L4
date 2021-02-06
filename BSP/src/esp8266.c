@@ -170,6 +170,8 @@ u8 esp_8266_mode(char *mode)
     }
     return ret;
 }
+
+
 u8 esp_8266_connect(char *ssid,char *pass_word)
 {
     u8 ret =0;
