@@ -37,6 +37,7 @@
 ".\objects\spi.o"
 ".\objects\esp8266.o"
 ".\objects\timer.o"
+".\objects\mqtt.o"
 ".\objects\bsp.o"
 ".\objects\os_app_hooks.o"
 ".\objects\cpu_core.o"

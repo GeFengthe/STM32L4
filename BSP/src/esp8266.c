@@ -74,9 +74,20 @@ void u2_printf(char* fmt,...)
 	i=strlen((const char*)USART2_TX_BUF);		//此次发送数据的长度
 	for(j=0;j<i;j++)							//循环发送数据
 	{
-		while((USART2->ISR&0X40)==0);			//循环发送,直到发送完毕   
+		while((USART2->ISR&0x40)==0);			//循环发送,直到发送完毕   
 		USART2->TDR=USART2_TX_BUF[j];  
 	} 
+}
+
+//通过透传向服务器发送数据
+void esp_8266_SendData(u8 *p,u32 len)
+{
+	u8 i;
+	for(i=0;i<len;i++)
+	{
+		while((USART2->ISR&0x40)==0);
+        USART2->TDR =p[i];
+	}
 }
 
 void USART2_IRQHandler(void)
@@ -171,47 +182,96 @@ u8 esp_8266_mode(char *mode)
     return ret;
 }
 
-
-u8 esp_8266_connect(char *ssid,char *pass_word)
+//esp8266 连接wifi函数
+/*ssid :wifi名字
+pass_word:密码
+*/
+u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
 {
     u8 ret =0;
     u8 *p;
+    //连接wifi
     sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
+    if(atk_8266_send_cmd(p,(u8*)"OK",70))
+    {
+        ret =1;
+    }
+    //关闭回显
+    if(atk_8266_send_cmd((u8 *)"ATE0",(u8 *)"OK",60))
+    {
+        ret =1;
+    }
+    return ret;
     
 }
-
-//连接wifi
-u8 esp_8266_sta_con(char *ssid,char *pass_word)
+/*
+*连接服务器
+*tpye：TCP或者UDP
+*addr：ip地址
+*port: 端口号
+*/
+u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 {
     u8 ret =0;
     u8 *p;
-    if(atk_8266_send_cmd((u8*)"AT+CWMODE=1",(u8*)"OK",100))
-    {
-        printf("AT+MODE=ERROR\r\n");
-        return ret;
-    }
-    delay_ms(1000);
-    p=(u8 *)"AT+CWJAP=\"HUAWEI-2303\",\"zyj15251884308\"";
-//    sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
-    ret=atk_8266_send_cmd(p,(u8*)"OK",300);
-    return ret;
+    sprintf((char *)p,"AT+CIPSTART=\"%s\",\"%s\",%d",type,addr,port);
+	if(atk_8266_send_cmd(p,(u8*)"OK",100))
+	{
+		ret =1;
+	}
+	return ret;
+}
+//打开透传模式
+u8 esp_8266_passthrough(void)
+{
+	u8 ret=0;
+	u8 *p;
+	//设置为透传模式
+	if(atk_8266_send_cmd((u8 *)"AT+CIPMODE=1",(u8 *)"OK",70))
+	{
+		ret =1;
+	}
+	if(atk_8266_send_cmd((u8 *)"AT+CIPSEND",(u8 *)"OK",60))
+	{
+		ret =1;
+	}
+	return ret;
 }
 
-u8 esp_8266_test_client(void)
-{
-    u8 ret =0;
-    u8 *p;
-//    sprintf((char *)p,"AT+CIPSTART=\"TCP\",\"192.168.3.39\",8080");
-    p=(u8*)"AT+CIPSTART=\"TCP\",\"192.168.3.39\",8080";
-    atk_8266_send_cmd(p,(u8*)"OK",300);
-    delay_ms(2000);
-    atk_8266_send_cmd((u8*)"AT+CIPSEND=10",(u8*)"OK",300);
-    delay_ms(500);
-    while(1)
-    {
-        u2_printf("%s\r\n","1234567890");
-        delay_ms(2000);
-        atk_8266_send_cmd((u8*)"AT+CIPSEND=10",(u8*)"OK",300);
-        delay_ms(2000);
-    }
-}
+
+
+////连接wifi
+//u8 esp_8266_sta_con(char *ssid,char *pass_word)
+//{
+//    u8 ret =0;
+//    u8 *p;
+//    if(atk_8266_send_cmd((u8*)"AT+CWMODE=1",(u8*)"OK",100))
+//    {
+//        printf("AT+MODE=ERROR\r\n");
+//        return ret;
+//    }
+//    delay_ms(1000);
+//    p=(u8 *)"AT+CWJAP=\"HUAWEI-2303\",\"zyj15251884308\"";
+////    sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
+//    ret=atk_8266_send_cmd(p,(u8*)"OK",300);
+//    return ret;
+//}
+
+//u8 esp_8266_test_client(void)
+//{
+//    u8 ret =0;
+//    u8 *p;
+////    sprintf((char *)p,"AT+CIPSTART=\"TCP\",\"192.168.3.39\",8080");
+//    p=(u8*)"AT+CIPSTART=\"TCP\",\"192.168.3.39\",8080";
+//    atk_8266_send_cmd(p,(u8*)"OK",300);
+//    delay_ms(2000);
+//    atk_8266_send_cmd((u8*)"AT+CIPSEND=10",(u8*)"OK",300);
+//    delay_ms(500);
+//    while(1)
+//    {
+//        u2_printf("%s\r\n","1234567890");
+//        delay_ms(2000);
+//        atk_8266_send_cmd((u8*)"AT+CIPSEND=10",(u8*)"OK",300);
+//        delay_ms(2000);
+//    }
+//}

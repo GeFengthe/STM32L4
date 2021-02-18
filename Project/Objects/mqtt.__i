@@ -1,6 +1,0 @@
---c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc
--I.\RTE\_Target_1
--IF:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
--IF:\Keil_v5\ARM\CMSIS\Include
--D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx
--o .\objects\mqtt.o --omf_browse .\objects\mqtt.crf --depend .\objects\mqtt.d "..\app\src\mqtt.c"
