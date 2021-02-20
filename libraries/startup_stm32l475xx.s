@@ -85,8 +85,8 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     SVC_Handler                ; SVCall Handler
                 DCD     DebugMon_Handler           ; Debug Monitor Handler
                 DCD     0                          ; Reserved
-                DCD     OS_CPU_PendSVHandler       ; PendSV Handler
-                DCD     OS_CPU_SysTick_Handler     ; SysTick Handler
+                DCD     PendSV_Handler             ; PendSV Handler
+                DCD     SysTick_Handler            ; SysTick Handler
 
                 ; External Interrupts
                 DCD     WWDG_IRQHandler                   ; Window WatchDog
@@ -183,21 +183,6 @@ Reset_Handler    PROC
                  EXPORT  Reset_Handler             [WEAK]
         IMPORT  SystemInit
         IMPORT  __main
-				
-				IF {FPU} != "SoftVFP"
-					
-				LDR.W	 R0, = 0xE000ED88
-				LDR		 R1, [R0]
-				ORR		 R1, R1, #(0xF <<20)
-				STR		 R1, [R0]
-				DSB
-				
-				LDR.W	 R0, = 0xE000EF34
-				LDR		 R1, [R0]
-				AND		 R1, R1, #(0x3FFFFFFF)
-				STR		 R1, [R0]
-				ISB
-				ENDIF
 
                  LDR     R0, =SystemInit
                  BLX     R0
@@ -240,12 +225,12 @@ DebugMon_Handler\
                 EXPORT  DebugMon_Handler           [WEAK]
                 B       .
                 ENDP
-OS_CPU_PendSVHandler  PROC
-                EXPORT  OS_CPU_PendSVHandler             [WEAK]
+PendSV_Handler  PROC
+                EXPORT  PendSV_Handler             [WEAK]
                 B       .
                 ENDP
-OS_CPU_SysTick_Handler PROC
-                EXPORT  OS_CPU_SysTick_Handler            [WEAK]
+SysTick_Handler PROC
+                EXPORT  SysTick_Handler            [WEAK]
                 B       .
                 ENDP
 

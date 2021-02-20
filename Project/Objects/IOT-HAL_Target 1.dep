@@ -1,11 +1,11 @@
 Dependencies for Project 'IOT-HAL', Target 'Target 1': (DO NOT MODIFY !)
-F (..\libraries\startup_stm32l475xx.s)(0x6011A500)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32L475xx SETA 1"--list .\listings\startup_stm32l475xx.lst --xref -o .\objects\startup_stm32l475xx.o --depend .\objects\startup_stm32l475xx.d)
+F (..\libraries\startup_stm32l475xx.s)(0x602FF0AB)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32L475xx SETA 1"--list .\listings\startup_stm32l475xx.lst --xref -o .\objects\startup_stm32l475xx.o --depend .\objects\startup_stm32l475xx.d)
 F (..\libraries\cmsis_armcc.h)(0x600D3011)()
 F (..\libraries\core_cm4.h)(0x600D3011)()
 F (..\libraries\core_cmFunc.h)(0x600D3011)()
 F (..\libraries\core_cmInstr.h)(0x600D3011)()
 F (..\libraries\core_cmSimd.h)(0x600D3011)()
-F (..\libraries\system_stm32l4xx.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\system_stm32l4xx.o --omf_browse .\objects\system_stm32l4xx.crf --depend .\objects\system_stm32l4xx.d)
+F (..\libraries\system_stm32l4xx.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\system_stm32l4xx.o --omf_browse .\objects\system_stm32l4xx.crf --depend .\objects\system_stm32l4xx.d)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -91,7 +91,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal.c)(0x600D73C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal.o --omf_browse .\objects\stm32l4xx_hal.crf --depend .\objects\stm32l4xx_hal.d)
+F (..\libraries\Src\stm32l4xx_hal.c)(0x600D73C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal.o --omf_browse .\objects\stm32l4xx_hal.crf --depend .\objects\stm32l4xx_hal.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -177,7 +177,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_cortex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_cortex.o --omf_browse .\objects\stm32l4xx_hal_cortex.crf --depend .\objects\stm32l4xx_hal_cortex.d)
+F (..\libraries\Src\stm32l4xx_hal_cortex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_cortex.o --omf_browse .\objects\stm32l4xx_hal_cortex.crf --depend .\objects\stm32l4xx_hal_cortex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -263,7 +263,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_dma.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma.o --omf_browse .\objects\stm32l4xx_hal_dma.crf --depend .\objects\stm32l4xx_hal_dma.d)
+F (..\libraries\Src\stm32l4xx_hal_dma.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma.o --omf_browse .\objects\stm32l4xx_hal_dma.crf --depend .\objects\stm32l4xx_hal_dma.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -349,7 +349,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_dma_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma_ex.o --omf_browse .\objects\stm32l4xx_hal_dma_ex.crf --depend .\objects\stm32l4xx_hal_dma_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_dma_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma_ex.o --omf_browse .\objects\stm32l4xx_hal_dma_ex.crf --depend .\objects\stm32l4xx_hal_dma_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -435,7 +435,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_dma2d.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma2d.o --omf_browse .\objects\stm32l4xx_hal_dma2d.crf --depend .\objects\stm32l4xx_hal_dma2d.d)
+F (..\libraries\Src\stm32l4xx_hal_dma2d.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_dma2d.o --omf_browse .\objects\stm32l4xx_hal_dma2d.crf --depend .\objects\stm32l4xx_hal_dma2d.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -521,7 +521,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_exti.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_exti.o --omf_browse .\objects\stm32l4xx_hal_exti.crf --depend .\objects\stm32l4xx_hal_exti.d)
+F (..\libraries\Src\stm32l4xx_hal_exti.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_exti.o --omf_browse .\objects\stm32l4xx_hal_exti.crf --depend .\objects\stm32l4xx_hal_exti.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -607,7 +607,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_gpio.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_gpio.o --omf_browse .\objects\stm32l4xx_hal_gpio.crf --depend .\objects\stm32l4xx_hal_gpio.d)
+F (..\libraries\Src\stm32l4xx_hal_gpio.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_gpio.o --omf_browse .\objects\stm32l4xx_hal_gpio.crf --depend .\objects\stm32l4xx_hal_gpio.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -693,7 +693,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_i2c.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_i2c.o --omf_browse .\objects\stm32l4xx_hal_i2c.crf --depend .\objects\stm32l4xx_hal_i2c.d)
+F (..\libraries\Src\stm32l4xx_hal_i2c.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_i2c.o --omf_browse .\objects\stm32l4xx_hal_i2c.crf --depend .\objects\stm32l4xx_hal_i2c.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -779,7 +779,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_i2c_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_i2c_ex.o --omf_browse .\objects\stm32l4xx_hal_i2c_ex.crf --depend .\objects\stm32l4xx_hal_i2c_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_i2c_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_i2c_ex.o --omf_browse .\objects\stm32l4xx_hal_i2c_ex.crf --depend .\objects\stm32l4xx_hal_i2c_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -865,7 +865,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_pwr.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_pwr.o --omf_browse .\objects\stm32l4xx_hal_pwr.crf --depend .\objects\stm32l4xx_hal_pwr.d)
+F (..\libraries\Src\stm32l4xx_hal_pwr.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_pwr.o --omf_browse .\objects\stm32l4xx_hal_pwr.crf --depend .\objects\stm32l4xx_hal_pwr.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -951,7 +951,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_pwr_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_pwr_ex.o --omf_browse .\objects\stm32l4xx_hal_pwr_ex.crf --depend .\objects\stm32l4xx_hal_pwr_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_pwr_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_pwr_ex.o --omf_browse .\objects\stm32l4xx_hal_pwr_ex.crf --depend .\objects\stm32l4xx_hal_pwr_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1037,7 +1037,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_rcc.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rcc.o --omf_browse .\objects\stm32l4xx_hal_rcc.crf --depend .\objects\stm32l4xx_hal_rcc.d)
+F (..\libraries\Src\stm32l4xx_hal_rcc.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rcc.o --omf_browse .\objects\stm32l4xx_hal_rcc.crf --depend .\objects\stm32l4xx_hal_rcc.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1123,7 +1123,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_rcc_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rcc_ex.o --omf_browse .\objects\stm32l4xx_hal_rcc_ex.crf --depend .\objects\stm32l4xx_hal_rcc_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_rcc_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rcc_ex.o --omf_browse .\objects\stm32l4xx_hal_rcc_ex.crf --depend .\objects\stm32l4xx_hal_rcc_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1209,7 +1209,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_rng.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rng.o --omf_browse .\objects\stm32l4xx_hal_rng.crf --depend .\objects\stm32l4xx_hal_rng.d)
+F (..\libraries\Src\stm32l4xx_hal_rng.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rng.o --omf_browse .\objects\stm32l4xx_hal_rng.crf --depend .\objects\stm32l4xx_hal_rng.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1295,7 +1295,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_rtc.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rtc.o --omf_browse .\objects\stm32l4xx_hal_rtc.crf --depend .\objects\stm32l4xx_hal_rtc.d)
+F (..\libraries\Src\stm32l4xx_hal_rtc.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rtc.o --omf_browse .\objects\stm32l4xx_hal_rtc.crf --depend .\objects\stm32l4xx_hal_rtc.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1381,7 +1381,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_rtc_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rtc_ex.o --omf_browse .\objects\stm32l4xx_hal_rtc_ex.crf --depend .\objects\stm32l4xx_hal_rtc_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_rtc_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_rtc_ex.o --omf_browse .\objects\stm32l4xx_hal_rtc_ex.crf --depend .\objects\stm32l4xx_hal_rtc_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1467,7 +1467,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_sai.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_sai.o --omf_browse .\objects\stm32l4xx_hal_sai.crf --depend .\objects\stm32l4xx_hal_sai.d)
+F (..\libraries\Src\stm32l4xx_hal_sai.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_sai.o --omf_browse .\objects\stm32l4xx_hal_sai.crf --depend .\objects\stm32l4xx_hal_sai.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1553,7 +1553,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_sai_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_sai_ex.o --omf_browse .\objects\stm32l4xx_hal_sai_ex.crf --depend .\objects\stm32l4xx_hal_sai_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_sai_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_sai_ex.o --omf_browse .\objects\stm32l4xx_hal_sai_ex.crf --depend .\objects\stm32l4xx_hal_sai_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1639,7 +1639,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_spi.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_spi.o --omf_browse .\objects\stm32l4xx_hal_spi.crf --depend .\objects\stm32l4xx_hal_spi.d)
+F (..\libraries\Src\stm32l4xx_hal_spi.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_spi.o --omf_browse .\objects\stm32l4xx_hal_spi.crf --depend .\objects\stm32l4xx_hal_spi.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1725,7 +1725,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_spi_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_spi_ex.o --omf_browse .\objects\stm32l4xx_hal_spi_ex.crf --depend .\objects\stm32l4xx_hal_spi_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_spi_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_spi_ex.o --omf_browse .\objects\stm32l4xx_hal_spi_ex.crf --depend .\objects\stm32l4xx_hal_spi_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1811,7 +1811,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_tim.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_tim.o --omf_browse .\objects\stm32l4xx_hal_tim.crf --depend .\objects\stm32l4xx_hal_tim.d)
+F (..\libraries\Src\stm32l4xx_hal_tim.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_tim.o --omf_browse .\objects\stm32l4xx_hal_tim.crf --depend .\objects\stm32l4xx_hal_tim.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1897,7 +1897,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_tim_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_tim_ex.o --omf_browse .\objects\stm32l4xx_hal_tim_ex.crf --depend .\objects\stm32l4xx_hal_tim_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_tim_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_tim_ex.o --omf_browse .\objects\stm32l4xx_hal_tim_ex.crf --depend .\objects\stm32l4xx_hal_tim_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -1983,7 +1983,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_timebase_tim_template.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_timebase_tim_template.o --omf_browse .\objects\stm32l4xx_hal_timebase_tim_template.crf --depend .\objects\stm32l4xx_hal_timebase_tim_template.d)
+F (..\libraries\Src\stm32l4xx_hal_timebase_tim_template.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_timebase_tim_template.o --omf_browse .\objects\stm32l4xx_hal_timebase_tim_template.crf --depend .\objects\stm32l4xx_hal_timebase_tim_template.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -2069,7 +2069,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_uart.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_uart.o --omf_browse .\objects\stm32l4xx_hal_uart.crf --depend .\objects\stm32l4xx_hal_uart.d)
+F (..\libraries\Src\stm32l4xx_hal_uart.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_uart.o --omf_browse .\objects\stm32l4xx_hal_uart.crf --depend .\objects\stm32l4xx_hal_uart.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -2155,7 +2155,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_uart_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_uart_ex.o --omf_browse .\objects\stm32l4xx_hal_uart_ex.crf --depend .\objects\stm32l4xx_hal_uart_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_uart_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_uart_ex.o --omf_browse .\objects\stm32l4xx_hal_uart_ex.crf --depend .\objects\stm32l4xx_hal_uart_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -2241,7 +2241,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_usart.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_usart.o --omf_browse .\objects\stm32l4xx_hal_usart.crf --depend .\objects\stm32l4xx_hal_usart.d)
+F (..\libraries\Src\stm32l4xx_hal_usart.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_usart.o --omf_browse .\objects\stm32l4xx_hal_usart.crf --depend .\objects\stm32l4xx_hal_usart.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -2327,7 +2327,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\libraries\Src\stm32l4xx_hal_usart_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_usart_ex.o --omf_browse .\objects\stm32l4xx_hal_usart_ex.crf --depend .\objects\stm32l4xx_hal_usart_ex.d)
+F (..\libraries\Src\stm32l4xx_hal_usart_ex.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_hal_usart_ex.o --omf_browse .\objects\stm32l4xx_hal_usart_ex.crf --depend .\objects\stm32l4xx_hal_usart_ex.d)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
 I (..\User\main.h)(0x600D3011)
@@ -2413,7 +2413,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\System\sys\sys.c)(0x600D40C7)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\sys.o --omf_browse .\objects\sys.crf --depend .\objects\sys.d)
+F (..\System\sys\sys.c)(0x600D40C7)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\sys.o --omf_browse .\objects\sys.crf --depend .\objects\sys.d)
 I (..\System\sys\sys.h)(0x601580DB)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
@@ -2500,7 +2500,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\System\usart\usart.c)(0x6012DAEB)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+F (..\System\usart\usart.c)(0x6012DAEB)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
 I (..\System\usart\usart.h)(0x600D3011)
 I (..\System\sys\sys.h)(0x601580DB)
 I (..\User\stm32l4xx.h)(0x6012EC54)
@@ -2590,7 +2590,7 @@ I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (..\System\delay\delay.h)(0x5BD4398A)
-F (..\System\delay\delay.c)(0x600D7B7A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+F (..\System\delay\delay.c)(0x600D7B7A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
 I (..\System\delay\delay.h)(0x5BD4398A)
 I (..\System\sys\sys.h)(0x601580DB)
 I (..\User\stm32l4xx.h)(0x6012EC54)
@@ -2678,7 +2678,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\User\main.c)(0x60169DD7)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x60315363)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -2770,31 +2770,20 @@ I (..\BSP\inc\lcd.h)(0x60104B92)
 I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\System\usart\usart.h)(0x600D3011)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (..\UCOSIII\CONFIG\includes.h)(0x52941A3C)
-I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (E:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x599ECD2E)
-I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\BSP\inc\esp8266.h)(0x602E8927)
 I (E:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
-I (E:\Keil_v5\ARM\ARMCC\include\math.h)(0x599ECD2E)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-I (..\UCOSIII\uC-LIB\lib_math.h)(0x52736048)
-I (..\UCOSIII\CONFIG\app_cfg.h)(0x52941A3C)
-I (..\UCOSIII\BSP\bsp.h)(0x6011A4EC)
-I (..\BSP\inc\esp8266.h)(0x6016986C)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\BSP\inc\timer.h)(0x60158151)
-F (..\User\stm32l4xx_it.c)(0x600D3011)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_it.o --omf_browse .\objects\stm32l4xx_it.crf --depend .\objects\stm32l4xx_it.d)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+F (..\User\stm32l4xx_it.c)(0x602FF269)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_it.o --omf_browse .\objects\stm32l4xx_it.crf --depend .\objects\stm32l4xx_it.d)
 I (..\User\main.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
@@ -2881,7 +2870,8 @@ I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\User\stm32l4xx_it.h)(0x600D3011)
-F (..\BSP\src\lcd.c)(0x60104C6B)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+F (..\User\FreeRTOSConfig.h)(0x60315498)()
+F (..\BSP\src\lcd.c)(0x60104C6B)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
 I (..\BSP\inc\lcd.h)(0x60104B92)
 I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\User\stm32l4xx.h)(0x6012EC54)
@@ -2973,7 +2963,7 @@ I (..\System\delay\delay.h)(0x5BD4398A)
 I (..\System\sys\sys.h)(0x601580DB)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (..\BSP\inc\font.h)(0x60104A9B)
-F (..\BSP\src\spi.c)(0x6010105C)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+F (..\BSP\src\spi.c)(0x6010105C)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
 I (..\BSP\inc\spi.h)(0x6010105C)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
@@ -3060,8 +3050,8 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\BSP\src\esp8266.c)(0x602B7701)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\esp8266.o --omf_browse .\objects\esp8266.crf --depend .\objects\esp8266.d)
-I (..\BSP\inc\esp8266.h)(0x6016986C)
+F (..\BSP\src\esp8266.c)(0x602E8926)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\esp8266.o --omf_browse .\objects\esp8266.crf --depend .\objects\esp8266.d)
+I (..\BSP\inc\esp8266.h)(0x602E8927)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -3153,7 +3143,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\System\sys\sys.h)(0x601580DB)
 I (..\System\delay\delay.h)(0x5BD4398A)
 I (..\BSP\inc\timer.h)(0x60158151)
-F (..\BSP\src\timer.c)(0x601646B0)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+F (..\BSP\src\timer.c)(0x601646B0)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (..\BSP\inc\timer.h)(0x60158151)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
@@ -3240,13 +3230,13 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-I (..\BSP\inc\esp8266.h)(0x6016986C)
+I (..\BSP\inc\esp8266.h)(0x602E8927)
 I (E:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\System\sys\sys.h)(0x601580DB)
 I (..\System\delay\delay.h)(0x5BD4398A)
-F (..\app\src\mqtt.c)(0x601E4D6A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\mqtt.o --omf_browse .\objects\mqtt.crf --depend .\objects\mqtt.d)
+F (..\app\src\mqtt.c)(0x601E4D6A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\mqtt.o --omf_browse .\objects\mqtt.crf --depend .\objects\mqtt.d)
 I (..\app\inc\mqtt.h)(0x601C0234)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
@@ -3335,464 +3325,114 @@ I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\System\sys\sys.h)(0x601580DB)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
-F (..\UCOSIII\BSP\bsp.c)(0x6011A521)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\bsp.o --omf_browse .\objects\bsp.crf --depend .\objects\bsp.d)
-I (..\UCOSIII\BSP\bsp.h)(0x6011A4EC)
-I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
-I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
-I (..\User\main.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_rcc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_def.h)(0x600D3011)
-I (..\User\stm32l4xx.h)(0x6012EC54)
-I (..\User\stm32l475xx.h)(0x600D3011)
-I (..\libraries\core_cm4.h)(0x600D3011)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\libraries\core_cmInstr.h)(0x600D3011)
-I (..\libraries\cmsis_armcc.h)(0x600D3011)
-I (..\libraries\core_cmFunc.h)(0x600D3011)
-I (..\libraries\core_cmSimd.h)(0x600D3011)
-I (..\libraries\system_stm32l4xx.h)(0x600D3011)
-I (..\libraries\Inc\Legacy/stm32_hal_legacy.h)(0x600D3011)
+F (..\FreeRTOS\src\croutine.c)(0x573F3A16)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\croutine.o --omf_browse .\objects\croutine.crf --depend .\objects\croutine.d)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
-I (..\libraries\Inc\stm32l4xx_hal_rcc_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_gpio.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_gpio_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dma.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dma_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dfsdm.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_cortex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_adc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_ll_adc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_adc_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_can.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_comp.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_ll_exti.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_crc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_crc_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_cryp.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dac.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dac_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dcmi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dma2d.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_dsi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_firewall.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_flash.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_flash_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_flash_ramfunc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_hash.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_sram.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_ll_fmc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_nor.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_nand.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_i2c.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_i2c_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_iwdg.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_lcd.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_lptim.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_ltdc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_opamp.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_opamp_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_ospi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_pwr.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_pwr_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_qspi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_rng.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_rtc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_rtc_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_sai.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_sd.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_ll_sdmmc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_smbus.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_spi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_spi_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_swpmi.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_tim.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_tim_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_tsc.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_uart.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_uart_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_usart.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_usart_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_irda.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_irda_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_smartcard.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_smartcard_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_wwdg.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_pcd.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
-I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\BSP\bsp.h)(0x6011A4EC)()
-F (..\UCOSIII\CONFIG\app_cfg.h)(0x52941A3C)()
-F (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)()
-F (..\UCOSIII\CONFIG\includes.h)(0x52941A3C)()
-F (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)()
-F (..\UCOSIII\CONFIG\os_app_hooks.c)(0x524125C8)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_app_hooks.o --omf_browse .\objects\os_app_hooks.crf --depend .\objects\os_app_hooks.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-I (..\UCOSIII\CONFIG\os_app_hooks.h)(0x524125C8)
-F (..\UCOSIII\CONFIG\os_app_hooks.h)(0x524125C8)()
-F (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)()
-F (..\UCOSIII\CONFIG\os_cfg_app.h)(0x5292F0AA)()
-F (..\UCOSIII\uC-CPU\cpu_core.c)(0x523BF7D2)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\cpu_core.o --omf_browse .\objects\cpu_core.crf --depend .\objects\cpu_core.d)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-F (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)()
-F (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)()
-F (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)()
-F (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu_a.asm)(0x539EAA28)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32L475xx SETA 1"--list .\listings\cpu_a.lst --xref -o .\objects\cpu_a.o --depend .\objects\cpu_a.d)
-F (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu_c.c)(0x539EA9FC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\cpu_c.o --omf_browse .\objects\cpu_c.crf --depend .\objects\cpu_c.d)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-F (..\UCOSIII\uC-LIB\lib_ascii.c)(0x52736048)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lib_ascii.o --omf_browse .\objects\lib_ascii.crf --depend .\objects\lib_ascii.d)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-F (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)()
-F (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)()
-F (..\UCOSIII\uC-LIB\lib_math.c)(0x52736048)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lib_math.o --omf_browse .\objects\lib_math.crf --depend .\objects\lib_math.d)
-I (..\UCOSIII\uC-LIB\lib_math.h)(0x52736048)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-F (..\UCOSIII\uC-LIB\lib_math.h)(0x52736048)()
-F (..\UCOSIII\uC-LIB\lib_mem.c)(0x52736048)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lib_mem.o --omf_browse .\objects\lib_mem.crf --depend .\objects\lib_mem.d)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-F (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)()
-F (..\UCOSIII\uC-LIB\lib_str.c)(0x52736048)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lib_str.o --omf_browse .\objects\lib_str.crf --depend .\objects\lib_str.d)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-F (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)()
-F (..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M4\RealView\lib_mem_a.asm)(0x52736048)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32L475xx SETA 1"--list .\listings\lib_mem_a.lst --xref -o .\objects\lib_mem_a.o --depend .\objects\lib_mem_a.d)
-F (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)()
-F (..\UCOSIII\uCOS-III\Source\os_cfg_app.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_cfg_app.o --omf_browse .\objects\os_cfg_app.crf --depend .\objects\os_cfg_app.d)
-I (..\UCOSIII\CONFIG\os_cfg_app.h)(0x5292F0AA)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_core.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_core.o --omf_browse .\objects\os_core.crf --depend .\objects\os_core.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_dbg.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_dbg.o --omf_browse .\objects\os_dbg.crf --depend .\objects\os_dbg.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_flag.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_flag.o --omf_browse .\objects\os_flag.crf --depend .\objects\os_flag.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_int.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_int.o --omf_browse .\objects\os_int.crf --depend .\objects\os_int.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_mem.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_mem.o --omf_browse .\objects\os_mem.crf --depend .\objects\os_mem.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_msg.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_msg.o --omf_browse .\objects\os_msg.crf --depend .\objects\os_msg.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_mutex.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_mutex.o --omf_browse .\objects\os_mutex.crf --depend .\objects\os_mutex.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_pend_multi.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_pend_multi.o --omf_browse .\objects\os_pend_multi.crf --depend .\objects\os_pend_multi.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_prio.c)(0x52774254)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_prio.o --omf_browse .\objects\os_prio.crf --depend .\objects\os_prio.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_q.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_q.o --omf_browse .\objects\os_q.crf --depend .\objects\os_q.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_sem.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_sem.o --omf_browse .\objects\os_sem.crf --depend .\objects\os_sem.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_stat.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_stat.o --omf_browse .\objects\os_stat.crf --depend .\objects\os_stat.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_task.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_task.o --omf_browse .\objects\os_task.crf --depend .\objects\os_task.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_tick.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_tick.o --omf_browse .\objects\os_tick.crf --depend .\objects\os_tick.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_time.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_time.o --omf_browse .\objects\os_time.crf --depend .\objects\os_time.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_tmr.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_tmr.o --omf_browse .\objects\os_tmr.crf --depend .\objects\os_tmr.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)()
-F (..\UCOSIII\uCOS-III\Source\os_var.c)(0x527359C6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_var.o --omf_browse .\objects\os_var.crf --depend .\objects\os_var.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu_c.c)(0x539EACDA)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\UCOSIII\BSP -I ..\UCOSIII\CONFIG -I ..\UCOSIII\uC-CPU -I ..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView -I ..\UCOSIII\uC-LIB -I ..\UCOSIII\uCOS-III\Source -I ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView -I ..\app\inc-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\os_cpu_c.o --omf_browse .\objects\os_cpu_c.crf --depend .\objects\os_cpu_c.d)
-I (..\UCOSIII\uCOS-III\Source\os.h)(0x527359C6)
-I (..\UCOSIII\CONFIG\os_cfg.h)(0x5285F0FA)
-I (..\UCOSIII\uC-CPU\cpu_core.h)(0x523BF7D2)
-I (..\UCOSIII\uC-CPU\ARM-Cortex-M4\RealView\cpu.h)(0x539EAA52)
-I (..\UCOSIII\uC-CPU\cpu_def.h)(0x523BF7D2)
-I (..\UCOSIII\CONFIG\cpu_cfg.h)(0x524125C8)
-I (..\UCOSIII\uC-LIB\lib_def.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_mem.h)(0x52736048)
-I (..\UCOSIII\CONFIG\lib_cfg.h)(0x52736D58)
-I (..\UCOSIII\uC-LIB\lib_str.h)(0x52736048)
-I (..\UCOSIII\uC-LIB\lib_ascii.h)(0x52736048)
-I (..\UCOSIII\uCOS-III\Source\os_type.h)(0x527359C6)
-I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)
-F (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu_a.asm)(0x539EAD14)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32L475xx SETA 1"--list .\listings\os_cpu_a.lst --xref -o .\objects\os_cpu_a.o --depend .\objects\os_cpu_a.d)
-F (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M4\Generic\RealView\os_cpu.h)(0x539EAD40)()
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\croutine.h)(0x573F3A16)
+F (..\FreeRTOS\src\event_groups.c)(0x573F3A16)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\event_groups.o --omf_browse .\objects\event_groups.crf --depend .\objects\event_groups.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\timers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\event_groups.h)(0x573F3A16)
+F (..\FreeRTOS\src\list.c)(0x573F3A16)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\list.o --omf_browse .\objects\list.crf --depend .\objects\list.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+F (..\FreeRTOS\src\queue.c)(0x573F3A17)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\queue.o --omf_browse .\objects\queue.crf --depend .\objects\queue.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\queue.h)(0x573F3A16)
+F (..\FreeRTOS\src\tasks.c)(0x573F3A17)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\tasks.o --omf_browse .\objects\tasks.crf --depend .\objects\tasks.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\timers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\StackMacros.h)(0x573F3A16)
+F (..\FreeRTOS\src\timers.c)(0x573F3A17)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\timers.o --omf_browse .\objects\timers.crf --depend .\objects\timers.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\queue.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\timers.h)(0x573F3A16)
+F (..\FreeRTOS\port\MemMang\heap_4.c)(0x573F3A16)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\heap_4.o --omf_browse .\objects\heap_4.crf --depend .\objects\heap_4.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
+F (..\FreeRTOS\port\RVDS\ARM_CM4F\port.c)(0x573F3A17)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\port.o --omf_browse .\objects\port.crf --depend .\objects\port.d)
+I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
+I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
+I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
+I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
+I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
