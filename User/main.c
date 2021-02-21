@@ -16,7 +16,8 @@ static TaskHandle_t AppMain_Handle=	NULL;
 int main()
 {
 	BaseType_t xReturn =pdPASS;
-    HAL_Init();
+//    HAL_Init();
+    HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SystemClock_Config();
 //    delay_init(80);
     LED_Init();
@@ -53,7 +54,7 @@ void LED_Init(void)
     GPIO_InitStructure.Pull=GPIO_PULLUP;
     HAL_GPIO_Init(GPIOE,&GPIO_InitStructure);
     
-    HAL_GPIO_WritePin(GPIOE,GPIO_PIN_7,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOE,GPIO_PIN_7,GPIO_PIN_SET);
 }
 
 static void appmain(void *parameter)

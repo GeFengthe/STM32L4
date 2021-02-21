@@ -2678,7 +2678,7 @@ I (..\libraries\Inc\stm32l4xx_ll_usb.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
-F (..\User\main.c)(0x60315363)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x6031BE3B)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\User\stm32l4xx.h)(0x6012EC54)
 I (..\User\stm32l475xx.h)(0x600D3011)
 I (..\libraries\core_cm4.h)(0x600D3011)
@@ -2775,7 +2775,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\BSP\inc\timer.h)(0x60158151)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -2783,7 +2783,7 @@ I (..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x573F3A17)
 I (..\FreeRTOS\port\include\mpu_wrappers.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\task.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\list.h)(0x573F3A16)
-F (..\User\stm32l4xx_it.c)(0x602FF269)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_it.o --omf_browse .\objects\stm32l4xx_it.crf --depend .\objects\stm32l4xx_it.d)
+F (..\User\stm32l4xx_it.c)(0x6031BD49)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\stm32l4xx_it.o --omf_browse .\objects\stm32l4xx_it.crf --depend .\objects\stm32l4xx_it.d)
 I (..\User\main.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal.h)(0x600D3011)
 I (..\User\stm32l4xx_hal_conf.h)(0x600D3011)
@@ -2870,7 +2870,7 @@ I (..\libraries\Inc\stm32l4xx_hal_pcd_ex.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_hcd.h)(0x600D3011)
 I (..\libraries\Inc\stm32l4xx_hal_gfxmmu.h)(0x600D3011)
 I (..\User\stm32l4xx_it.h)(0x600D3011)
-F (..\User\FreeRTOSConfig.h)(0x60315498)()
+F (..\User\FreeRTOSConfig.h)(0x6031BE30)()
 F (..\BSP\src\lcd.c)(0x60104C6B)(--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\libraries -I ..\libraries\Inc\Legacy -I ..\libraries\Inc -I ..\User -I ..\System\delay -I ..\System\sys -I ..\System\usart -I ..\BSP\inc -I ..\app\inc -I ..\FreeRTOS\port\include -I ..\FreeRTOS\port\RVDS\ARM_CM4F-I.\RTE\_Target_1-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
 I (..\BSP\inc\lcd.h)(0x60104B92)
 I (..\BSP\inc\spi.h)(0x6010105C)
@@ -3329,7 +3329,7 @@ F (..\FreeRTOS\src\croutine.c)(0x573F3A16)(--c99 --gnu -c --cpu Cortex-M4.fp -D_
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3343,7 +3343,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3358,7 +3358,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3371,7 +3371,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3386,7 +3386,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3401,7 +3401,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3416,7 +3416,7 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
@@ -3428,7 +3428,7 @@ F (..\FreeRTOS\port\RVDS\ARM_CM4F\port.c)(0x573F3A17)(--c99 --gnu -c --cpu Corte
 I (..\FreeRTOS\port\include\FreeRTOS.h)(0x573F3A16)
 I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\User\FreeRTOSConfig.h)(0x60315498)
+I (..\User\FreeRTOSConfig.h)(0x6031BE30)
 I (..\FreeRTOS\port\include\projdefs.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\portable.h)(0x573F3A16)
 I (..\FreeRTOS\port\include\deprecated_definitions.h)(0x573F3A16)
