@@ -129,6 +129,7 @@ uint8_t * atk_8266_check_cmd(uint8_t *src)
     }
     return (uint8_t *)strx;
 }
+
 /*
 CMD :指令
 ack：应答 无应答即是NULL
@@ -161,6 +162,7 @@ uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
     }
     return res;
 }
+
 
 /*
 ESP8266模式选择函数

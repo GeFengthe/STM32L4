@@ -19,7 +19,6 @@ int main()
 //    HAL_Init();
     HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SystemClock_Config();
-//    delay_init(80);
     LED_Init();
     uart_init(115200);
 //    init_uart2();
@@ -33,7 +32,6 @@ int main()
 		vTaskStartScheduler();
 	else
 		return -1;
-	
     while(1)
     {
         
@@ -59,13 +57,7 @@ void LED_Init(void)
 
 static void appmain(void *parameter)
 {
-	while(1)
-	{
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_SET);
-		vTaskDelay(500);
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET);
-		vTaskDelay(500);
-	}
+    
 }
 
 
