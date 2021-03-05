@@ -18,6 +18,16 @@ const char sta[]="AT+CWMODE=1";         //STA 模式
 const char ap[] ="AT+CWMODE=2";         //AP 模式
 const char sta_ap[] ="AT+CWMODE=3";     //STA_AP模式
 
+//ESP8266结构体
+// typedef struct esp8266_wifi{
+//     uint8_t init_flag;
+//     char *ssid;
+//     char *password;
+//     char *mode;
+
+// }esp8266;
+
+
 //typedef struct wifi{
 //    const u8 * wifista_ssid,
 //    const u8 * wifista_password,
@@ -79,15 +89,14 @@ void u2_printf(char* fmt,...)
 	} 
 }
 
-//通过透传向服务器发送数据
-void esp_8266_SendData(u8 *p,u32 len)
+//向ESP8266发送定长数据
+void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
 {
-	u8 i;
-	for(i=0;i<len;i++)
-	{
-		while((USART2->ISR&0x40)==0);
-        USART2->TDR =p[i];
-	}
+    memset(USART2_RX_BUF,0,1024);
+    USART2_RX_STA =0;                   //接收标志置0
+    //定长发送
+    HAL_UART_Transmit(&UART2_Hander,buf,len,0xFFFF);
+
 }
 
 void USART2_IRQHandler(void)
@@ -191,10 +200,11 @@ pass_word:密码
 u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
 {
     u8 ret =0;
-    u8 *p;
     //连接wifi
+    u8 p[50];
     sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
-    if(atk_8266_send_cmd(p,(u8*)"OK",70))
+    printf("cmd=%s\r\n",p);
+    if(atk_8266_send_cmd(p,(u8*)"OK",800))
     {
         ret =1;
     }
@@ -215,7 +225,7 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
 u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 {
     u8 ret =0;
-    u8 *p;
+    u8 p[50];
     sprintf((char *)p,"AT+CIPSTART=\"%s\",\"%s\",%d",type,addr,port);
 	if(atk_8266_send_cmd(p,(u8*)"OK",100))
 	{
@@ -227,7 +237,7 @@ u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 u8 esp_8266_passthrough(void)
 {
 	u8 ret=0;
-	u8 *p;
+	u8 p[50];
 	//设置为透传模式
 	if(atk_8266_send_cmd((u8 *)"AT+CIPMODE=1",(u8 *)"OK",70))
 	{

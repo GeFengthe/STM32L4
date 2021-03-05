@@ -1,6 +1,7 @@
 #include "mqtt.h"
 #include "sys.h"
 #include "string.h"
+#include "esp8266.h"
 
 char MQTT_ClientID[100];                    //客户端ID
 char MQTT_UserName[100];                    //用户民
@@ -61,10 +62,17 @@ const u8 parket_subAck[] ={0x90,0x03};
 #define     BYTE2(temp)                        (*(uint8_t *)(&temp)+2)
 #define     BYTE3(temp)                        (*(uint8_t *)(&temp)+3)
 
+//MQTT发送数据
+void MQTT_SendBuf(uint8_t *buf,uint16_t len)
+{
+    ESP8266_ATSendBuf(buf,len);
+}
+
+
 
 /*
 函数功能: 登录服务器
-函数返回值: 0表示成功 1表示失败
+函数返回值: 1表示成功 0表示失败
 */
 u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
 {
@@ -127,7 +135,24 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
         mqtt_txbuf[mqtt_txlen++] =BYTE0(Passwordlen);
         memcpy(&mqtt_txbuf[mqtt_txlen],Password,Passwordlen);
         mqtt_txlen +=Passwordlen;
-    }   
+    }
+    uint8_t cnt =2;
+    uint8_t wait;
+    while(cnt--)
+    {
+        memset(USART2_RX_BUF,0,sizeof(USART2_RX_BUF));
+        MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
+        wait=30;
+        while(wait--)
+        {
+            if(USART2_RX_BUF[0]==parket_connetAck[0] && USART2_RX_BUF[1]==parket_connetAck[1])
+            {
+                return 1;
+            }
+            delay_ms(100);
+        }
+    }
+    return 0;   
 }
 
 //MQTT发布数据打包函数
