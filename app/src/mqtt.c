@@ -3,41 +3,41 @@
 #include "string.h"
 #include "esp8266.h"
 
-char MQTT_ClientID[100];                    //¿Í»§¶ËID
-char MQTT_UserName[100];                    //ÓÃ»§Ãñ
-char MQTT_PassWord[100];                    //ÃØÔ¿
+char MQTT_ClientID[100];                    //å®¢æˆ·ç«¯ID
+char MQTT_UserName[100];                    //ç”¨æˆ·æ°‘
+char MQTT_PassWord[100];                    //ç§˜é’¥
 
 u8 *mqtt_rxbuf;
 u8 *mqtt_txbuf;
 u16 mqtt_rxlen;
 u16 mqtt_txlen;
-u8 _mqtt_rxbuf[256];                        //½ÓÊÕ»º´æÇø
-u8 _mqtt_txbuf[256];                        //·¢ËÍ»º´æÇø
+u8 _mqtt_rxbuf[256];                        //æŽ¥æ”¶ç¼“å­˜åŒº
+u8 _mqtt_txbuf[256];                        //å‘é€ç¼“å­˜åŒº
 
 typedef enum{
-    //Ãû×Ö        Öµ           ±¨ÎÄÁ÷¶¯·½Ïò          ÃèÊö
+    //åå­—        å€¼           æŠ¥æ–‡æµåŠ¨æ–¹å‘          æè¿°
     
-    M_RESERVED1 =0  ,   //      ½ûÖ¹                  ±£Áô
-    M_CONNECT       ,   //      ¿Í»§¶Ëµ½·þÎñÆ÷         ¿Í»§¶ËÇëÇóÁ¬½Ó·þÎñ¶Ë±¨ÎÄ
-    M_CONNACK       ,   //      ·þÎñÆ÷µ½¿Í»§¶Ë         Á¬½Ó±¨ÎÄÓ¦´ð
-    M_PUBLISH       ,   //      Á½¸ö·½Ïò¶¼ÔÊÐí          ·¢²¼ÏûÏ¢
-    M_PUBACK        ,   //      Á½¸ö·½Ïò¶¼ÔÊÐí         QoS 1ÏûÏ¢·¢²¼È·ÈÏ
-    M_PUBREC        ,   //      Á½¸ö·½Ïò¶¼ÔÊÐí	    ·¢²¼ÊÕµ½£¨±£Ö¤½»¸¶µÚÒ»²½£©
-    M_PUBREL        ,   //      Á½¸ö·½Ïò¶¼ÔÊÐí	    ·¢²¼ÊÍ·Å£¨±£Ö¤½»¸¶µÚ¶þ²½£©
-    M_PUBCOMP       ,   //      Á½¸ö·½Ïò¶¼ÔÊÐí	    QoS 2ÏûÏ¢·¢²¼Íê³É£¨±£Ö¤½»»¥µÚÈý²½£©
-    M_SUBSCRIBE     ,   //      ¿Í»§¶Ëµ½·þÎñ¶Ë	    ¿Í»§¶Ë¶©ÔÄÇëÇó
-    M_SUBACK        ,   //      ·þÎñ¶Ëµ½¿Í»§¶Ë	    ¶©ÔÄÇëÇó±¨ÎÄÈ·ÈÏ
-    M_UNSUBSCRIBE   ,   //      ¿Í»§¶Ëµ½·þÎñ¶Ë	    ¿Í»§¶ËÈ¡Ïû¶©ÔÄÇëÇó
-    M_UNSUBACK      ,   //      ·þÎñ¶Ëµ½¿Í»§¶Ë	    È¡Ïû¶©ÔÄ±¨ÎÄÈ·ÈÏ
-    M_PINGREQ       ,   //      ¿Í»§¶Ëµ½·þÎñ¶Ë	    ÐÄÌøÇëÇó
-    M_PINGRESP      ,   //      ·þÎñ¶Ëµ½¿Í»§¶Ë	    ÐÄÌøÏìÓ¦
-    M_DISCONNECT    ,   //      ¿Í»§¶Ëµ½·þÎñ¶Ë	    ¿Í»§¶Ë¶Ï¿ªÁ¬½Ó
-    M_RESERVED2     ,   //      ½ûÖ¹	                ±£Áô
+    M_RESERVED1 =0  ,   //      ç¦æ­¢                  ä¿ç•™
+    M_CONNECT       ,   //      å®¢æˆ·ç«¯åˆ°æœåŠ¡å™¨         å®¢æˆ·ç«¯è¯·æ±‚è¿žæŽ¥æœåŠ¡ç«¯æŠ¥æ–‡
+    M_CONNACK       ,   //      æœåŠ¡å™¨åˆ°å®¢æˆ·ç«¯         è¿žæŽ¥æŠ¥æ–‡åº”ç­”
+    M_PUBLISH       ,   //      ä¸¤ä¸ªæ–¹å‘éƒ½å…è®¸          å‘å¸ƒæ¶ˆæ¯
+    M_PUBACK        ,   //      ä¸¤ä¸ªæ–¹å‘éƒ½å…è®¸         QoS 1æ¶ˆæ¯å‘å¸ƒç¡®è®¤
+    M_PUBREC        ,   //      ä¸¤ä¸ªæ–¹å‘éƒ½å…è®¸	    å‘å¸ƒæ”¶åˆ°ï¼ˆä¿è¯äº¤ä»˜ç¬¬ä¸€æ­¥ï¼‰
+    M_PUBREL        ,   //      ä¸¤ä¸ªæ–¹å‘éƒ½å…è®¸	    å‘å¸ƒé‡Šæ”¾ï¼ˆä¿è¯äº¤ä»˜ç¬¬äºŒæ­¥ï¼‰
+    M_PUBCOMP       ,   //      ä¸¤ä¸ªæ–¹å‘éƒ½å…è®¸	    QoS 2æ¶ˆæ¯å‘å¸ƒå®Œæˆï¼ˆä¿è¯äº¤äº’ç¬¬ä¸‰æ­¥ï¼‰
+    M_SUBSCRIBE     ,   //      å®¢æˆ·ç«¯åˆ°æœåŠ¡ç«¯	    å®¢æˆ·ç«¯è®¢é˜…è¯·æ±‚
+    M_SUBACK        ,   //      æœåŠ¡ç«¯åˆ°å®¢æˆ·ç«¯	    è®¢é˜…è¯·æ±‚æŠ¥æ–‡ç¡®è®¤
+    M_UNSUBSCRIBE   ,   //      å®¢æˆ·ç«¯åˆ°æœåŠ¡ç«¯	    å®¢æˆ·ç«¯å–æ¶ˆè®¢é˜…è¯·æ±‚
+    M_UNSUBACK      ,   //      æœåŠ¡ç«¯åˆ°å®¢æˆ·ç«¯	    å–æ¶ˆè®¢é˜…æŠ¥æ–‡ç¡®è®¤
+    M_PINGREQ       ,   //      å®¢æˆ·ç«¯åˆ°æœåŠ¡ç«¯	    å¿ƒè·³è¯·æ±‚
+    M_PINGRESP      ,   //      æœåŠ¡ç«¯åˆ°å®¢æˆ·ç«¯	    å¿ƒè·³å“åº”
+    M_DISCONNECT    ,   //      å®¢æˆ·ç«¯åˆ°æœåŠ¡ç«¯	    å®¢æˆ·ç«¯æ–­å¼€è¿žæŽ¥
+    M_RESERVED2     ,   //      ç¦æ­¢	                ä¿ç•™
     
 }_typdef_mqtt_message;
 
-//Á¬½Ó³É¹¦·þÎñÆ÷»ØÓ¦ 20 02 00 00
-//¿Í»§¶ËÖ÷¶¯¶Ï¿ªÁ¬½Ó e0 00
+//è¿žæŽ¥æˆåŠŸæœåŠ¡å™¨å›žåº” 20 02 00 00
+//å®¢æˆ·ç«¯ä¸»åŠ¨æ–­å¼€è¿žæŽ¥ e0 00
 
 const u8 parket_connetAck[] = {0x20,0x02,0x00,0x00};
 const u8 parket_disconnect[] = {0xe0,0x00};
@@ -46,15 +46,15 @@ const u8 parket_heart_reply[] ={0xc0,0x00};
 const u8 parket_subAck[] ={0x90,0x03};
 
 /*
-º¯Êý¹¦ÄÜ: ³õÊ¼»¯°¢ÀïÔÆÎïÁªÍø·þÎñÆ÷µÄµÇÂ¼²ÎÊý
+å‡½æ•°åŠŸèƒ½: åˆå§‹åŒ–é˜¿é‡Œäº‘ç‰©è”ç½‘æœåŠ¡å™¨çš„ç™»å½•å‚æ•°
 */
  
-//ÃÜÂë
+//å¯†ç 
 //clientId*deviceName*productKey#
-// *Ìæ»»ÎªDeviceName  #Ìæ»»ÎªProductKey  ¼ÓÃÜÃÜÔ¿ÊÇDeviceSecret  ¼ÓÃÜ·½Ê½ÊÇHmacSHA1  
-//PassWordÃ÷ÎÄ=clientIdmq2_iotdeviceNamemq2_iotproductKeya1WLC5GuOfx
-//hmacsha1¼ÓÃÜÍøÕ¾£ºhttp://encode.chahuo.com/
-//¼ÓÃÜµÄÃÜÔ¿£ºDeviceSecret
+// *æ›¿æ¢ä¸ºDeviceName  #æ›¿æ¢ä¸ºProductKey  åŠ å¯†å¯†é’¥æ˜¯DeviceSecret  åŠ å¯†æ–¹å¼æ˜¯HmacSHA1  
+//PassWordæ˜Žæ–‡=clientIdmq2_iotdeviceNamemq2_iotproductKeya1WLC5GuOfx
+//hmacsha1åŠ å¯†ç½‘ç«™ï¼šhttp://encode.chahuo.com/
+//åŠ å¯†çš„å¯†é’¥ï¼šDeviceSecret
 
 
 #define     BYTE0(temp)                        (*(uint8_t *)(&temp))
@@ -62,17 +62,21 @@ const u8 parket_subAck[] ={0x90,0x03};
 #define     BYTE2(temp)                        (*(uint8_t *)(&temp)+2)
 #define     BYTE3(temp)                        (*(uint8_t *)(&temp)+3)
 
-//MQTT·¢ËÍÊý¾Ý
+//MQTTå‘é€æ•°æ®
 void MQTT_SendBuf(uint8_t *buf,uint16_t len)
 {
     ESP8266_ATSendBuf(buf,len);
 }
-
+//MQTTå‘é€å¿ƒè·³
+void MQTT_SendHeart(void)
+{
+    MQTT_SendBuf((u8 *)parket_heart,sizeof(parket_heart));
+}
 
 
 /*
-º¯Êý¹¦ÄÜ: µÇÂ¼·þÎñÆ÷
-º¯Êý·µ»ØÖµ: 1±íÊ¾³É¹¦ 0±íÊ¾Ê§°Ü
+å‡½æ•°åŠŸèƒ½: ç™»å½•æœåŠ¡å™¨
+å‡½æ•°è¿”å›žå€¼: 1è¡¨ç¤ºæˆåŠŸ 0è¡¨ç¤ºå¤±è´¥
 */
 u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
 {
@@ -83,21 +87,21 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     int Passwordlen =strlen(Password);
     int Datalen;
     mqtt_txlen =0;
-    //¿É±ä±¨Í·+Payload  Ã¿¸ö×Ö¶Î°üº¬Á½¸ö×Ö½ÚµÄ³¤¶È±êÊ¶
+    //å¯å˜æŠ¥å¤´+Payload  æ¯ä¸ªå­—æ®µåŒ…å«ä¸¤ä¸ªå­—èŠ‚çš„é•¿åº¦æ ‡è¯†
     Datalen = 10+(ClientIDlen+2)+(Usernamelen+2)+(Passwordlen+2);
-    //¹Ì¶¨±¨Í·
-	//¿ØÖÆ±¨ÎÄÀàÐÍ
+    //å›ºå®šæŠ¥å¤´
+	//æŽ§åˆ¶æŠ¥æ–‡ç±»åž‹
     mqtt_txbuf[mqtt_txlen++]=0x10;
     do{
         encodedByte =Datalen %128;
         Datalen =Datalen/128;
         if(Datalen >0)
-            encodedByte =encodedByte |128;                  //°Ñ×î¸ßÎªÖÃ1±íÊ¾»¹ÓÐÑÓÐø×Ö½Ú
+            encodedByte =encodedByte |128;                  //æŠŠæœ€é«˜ä¸ºç½®1è¡¨ç¤ºè¿˜æœ‰å»¶ç»­å­—èŠ‚
         mqtt_txbuf[mqtt_txlen++] =encodedByte;
     }while(Datalen>0);
     
-    //¿É±ä±¨Í·  (°üº¬ËÄ¸ö×Ö¶Î Ð­ÒéÃû(protocol name) Ð­Òé¼¶±ð(protocol level) Á¬½Ó±êÖ¾(Connect Flags) ±£³ÖÁ¬½Ó(keep alive)
-    //Ð­ÒéÃû
+    //å¯å˜æŠ¥å¤´  (åŒ…å«å››ä¸ªå­—æ®µ åè®®å(protocol name) åè®®çº§åˆ«(protocol level) è¿žæŽ¥æ ‡å¿—(Connect Flags) ä¿æŒè¿žæŽ¥(keep alive)
+    //åè®®å
     mqtt_txbuf[mqtt_txlen++] =0;
     mqtt_txbuf[mqtt_txlen++] =4;
     mqtt_txbuf[mqtt_txlen++] ='M';
@@ -105,22 +109,22 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     mqtt_txbuf[mqtt_txlen++] ='T';
     mqtt_txbuf[mqtt_txlen++] ='T';
     
-    //Ð­Òé¼¶±ð ¶ÔÓÚ3.1.1°æ±¾ µÄÐ­Òé¼¶±ðÊÇµÄÖµÊÇ4(0x04);
+    //åè®®çº§åˆ« å¯¹äºŽ3.1.1ç‰ˆæœ¬ çš„åè®®çº§åˆ«æ˜¯çš„å€¼æ˜¯4(0x04);
     mqtt_txbuf[mqtt_txlen++] =0x04;
     
-    //Á¬½Ó±êÖ¾
+    //è¿žæŽ¥æ ‡å¿—
     mqtt_txbuf[mqtt_txlen++] =0xc2;
-    //±£³ÖÁ¬½Ó keep alive ÊÇÒ»¸öÒÔÃëÎªµ¥Î»µÄÊ±¼ä¼ä¸ô£¬±íÊ¾ÎªÒ»¸ö16Î»µÄ×Ö £¬ËüÊÇÖ¸ÔÚ¿Í»§¶Ë·¢ËÍ
+    //ä¿æŒè¿žæŽ¥ keep alive æ˜¯ä¸€ä¸ªä»¥ç§’ä¸ºå•ä½çš„æ—¶é—´é—´éš”ï¼Œè¡¨ç¤ºä¸ºä¸€ä¸ª16ä½çš„å­— ï¼Œå®ƒæ˜¯æŒ‡åœ¨å®¢æˆ·ç«¯å‘é€
     mqtt_txbuf[mqtt_txlen++] =0x00;
-    mqtt_txbuf[mqtt_txlen++] =0x64;         //100sÒ»¸öÐÄÌø°ü
+    mqtt_txbuf[mqtt_txlen++] =0x64;         //100sä¸€ä¸ªå¿ƒè·³åŒ…
     
-    //¿Í»§¶ËIDÓÐÐ§ÔØºÉ×Ö¶Î
+    //å®¢æˆ·ç«¯IDæœ‰æ•ˆè½½è·å­—æ®µ
     mqtt_txbuf[mqtt_txlen++] =BYTE1(ClientIDlen);                       // Client ID length MSB
     mqtt_txbuf[mqtt_txlen++] =BYTE0(ClientIDlen);                       // Client ID length LSB
     memcpy(&mqtt_txbuf[mqtt_txlen],ClientID,ClientIDlen);
     mqtt_txlen +=ClientIDlen;
     
-    //ÓÃ»§ÃûÓÐÐ§ÔØºÉ×Ö¶Î
+    //ç”¨æˆ·åæœ‰æ•ˆè½½è·å­—æ®µ
     if(Usernamelen>0)
     {
         mqtt_txbuf[mqtt_txlen++] =BYTE1(Usernamelen);
@@ -128,7 +132,7 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
         memcpy(&mqtt_txbuf[mqtt_txlen],Username,Usernamelen);
         mqtt_txlen +=Usernamelen;
     }
-    //ÃÜÂëÓÐÐ§ÔØºÉ×Ö¶Î
+    //å¯†ç æœ‰æ•ˆè½½è·å­—æ®µ
     if(Passwordlen>0)
     {
         mqtt_txbuf[mqtt_txlen++] =BYTE1(Passwordlen);
@@ -155,16 +159,110 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     return 0;   
 }
 
-//MQTT·¢²¼Êý¾Ý´ò°üº¯Êý
-//topic   Ö÷Ìâ 
-//message ÏûÏ¢
-//qos     ÏûÏ¢µÈ¼¶ 
+//MQTTå‘å¸ƒæ•°æ®æ‰“åŒ…å‡½æ•°
+//topic   ä¸»é¢˜ 
+//message æ¶ˆæ¯
+//qos     æ¶ˆæ¯ç­‰çº§ 
 u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
 {
     static u16 id=0;
+    uint8_t encodedByte;
     int topicLength =strlen(topic);
     int messageLength =strlen(message);
     int Datalen;
+    mqtt_txlen =0;
+    memset(mqtt_txbuf,0,mqtt_txlen);
+    //æœ‰æ•ˆè½½è·çš„é•¿åº¦
+    if(qos)
+    {
+        //æ•°æ®é•¿åº¦   ä¸»é¢˜å          æ ‡è¯†ç¬¦ æœ‰æ•ˆè½½è·
+        mqtt_txlen =(topicLength+2)+2+messageLength;
+    }else
+    {
+        mqtt_txlen =(topicLength+2)+messageLength;                              //qos=0çš„æ¶ˆæ¯æ²¡æœ‰æ ‡è¯†ç¬¦
+    }
+//å›ºå®šæŠ¥å¤´
+    mqtt_txbuf[mqtt_txlen++] =0x30;                                              //MQTT Message Type PUBLISH
+    do
+    {
+        encodedByte=Datalen %128;
+        Datalen =Datalen/128;
+        if(Datalen>0)
+        {
+            encodedByte |=128;
+        }
+        mqtt_txbuf[mqtt_txlen++]=encodedByte;
+    }while(Datalen >0)
+
+
+    mqtt_txbuf[mqtt_txlen++] =BYTE1(topicLength);                           //ä¸»é¢˜é•¿åº¦MSB
+    mqtt_txbuf[mqtt_txlen++] =BYTE0(topicLength);                           //ä¸»é¢˜é•¿åº¦LSB
+    memcpy(mqtt_txbuf,topic,topicLength);
+    mqtt_txlen+=topicLength;
+
+    //æŠ¥æ–‡æ ‡è¯†ç¬¦
+    if(qos)
+    {
+        mqtt_txbuf[mqtt_txlen++] = BYTE1(id);
+        mqtt_txbuf[mqtt_txlen++] = BYTE0(id);
+        id++;
+    }
+//æœ‰æ•ˆè½½è·
+    memcpy(&mqtt_txbuf[mqtt_txlen],message,messageLength);
+    mqtt_txlen +=messageLength;
+    memset(USART2_RX_BUF,0,1024);
+    MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
+    return mqtt_txlen;
+
+}
+/*
+å‡½æ•°åŠŸèƒ½: MQTTè®¢é˜…/å–æ¶ˆè®¢é˜…æ•°æ®æ‰“åŒ…å‡½æ•°
+å‡½æ•°å‚æ•°:
+    topic       ä¸»é¢˜   
+    qos         æ¶ˆæ¯ç­‰çº§ 0:æœ€å¤šåˆ†å‘ä¸€æ¬¡  1: è‡³å°‘åˆ†å‘ä¸€æ¬¡  2: ä»…åˆ†å‘ä¸€æ¬¡
+    whether     è®¢é˜…/å–æ¶ˆè®¢é˜…è¯·æ±‚åŒ… (1è¡¨ç¤ºè®¢é˜…,0è¡¨ç¤ºå–æ¶ˆè®¢é˜…)
+è¿”å›žå€¼: 0è¡¨ç¤ºæˆåŠŸ 1è¡¨ç¤ºå¤±è´¥
+*/
+uint8_t MQTT_SubsrcibeTopic(char *topic,uint8_t qos,uint8_t whether)
+{
+    uint8_t i,j;
+    mqtt_txlen =0;
+    int topiclen =strlen(topic);                    //å¯å˜æŠ¥å¤´çš„é•¿åº¦ï¼ˆ2å­—èŠ‚ï¼‰åŠ ä¸Šæœ‰æ•ˆè½½è·çš„é•¿åº¦
+    int Datalen =0;
+    uint8_t encodedByte =0;
+    Datalen =2+(topiclen+2)+(whether?1:0);
+
+//æŽ§åˆ¶æŠ¥æ–‡
+//å›ºå®šæŠ¥å¤´
+if(whether)
+{
+    mqtt_txbuf[mqtt_txlen++]=0x82;                  //æ¶ˆæ¯ç±»åž‹å’Œæ ‡å¿—è®¢é˜…
+}else
+{
+    mqtt_txbuf[mqtt_txlen++]=0xA2;                  //å–æ¶ˆè®¢é˜…
+}
+//å‰©ä½™é•¿åº¦
+do{
+    encodedByte =Datalen % 128;
+    Datalen =Datalen/128;
+    if(Datalen >0)
+    {
+        encodedByte |=0x80;
+    }
+    mqtt_txbuf[mqtt_txlen++]=encodedByte;
+}while(Datalen >0)
+
+//æŠ¥æ–‡æ ‡è¯†ç¬¦
+mqtt_txbuf[mqtt_txlen++]=0x00;                          //MSB
+mqtt_txbuf[mqtt_txlen++]=0x01;                          //LSB
+
+memcpy(&mqtt_txbuf[mqtt_txlen],topic,topiclen);
+mqtt_txlen +=topiclen;
+
+if(whether)
+{
+    mqtt_txbuf[mqtt_txlen++]=qos;
 }
 
 
+}

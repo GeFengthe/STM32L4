@@ -1,24 +1,24 @@
 #include "esp8266.h"
 /*
 WIFI :HUAWEI-2303
-ÃÜÂë: zyj15251884308
+å¯†ç : zyj15251884308
 
 */
-#define WIFISTA_SSID                    "HUAWEI-2303"               //wifiÃû³Æ
-#define WIFISTA_PASSWORD                "zyj15251884308"            //Á¬½ÓÃÜÂë
-#define WIFISTA_PORTNUM                 "8080"                      //Á¬½Ó¶Ë¿ÚºÅ
-#define WIFISTA_ENCRYPTION              "wpawpa2_aes"               //wpa/wpa2 aes ¼ÓÃÜ·½Ê½
+#define WIFISTA_SSID                    "HUAWEI-2303"               //wifiåç§°
+#define WIFISTA_PASSWORD                "zyj15251884308"            //è¿žæŽ¥å¯†ç 
+#define WIFISTA_PORTNUM                 "8080"                      //è¿žæŽ¥ç«¯å£å·
+#define WIFISTA_ENCRYPTION              "wpawpa2_aes"               //wpa/wpa2 aes åŠ å¯†æ–¹å¼
 
 
-uint16_t USART2_RX_STA =0;              //½ÓÊÕ½áÊø±êÖ¾
-static uint8_t USART2_TX_BUF[1024];     //·¢ËÍBUFF
+uint16_t USART2_RX_STA =0;              //æŽ¥æ”¶ç»“æŸæ ‡å¿—
+static uint8_t USART2_TX_BUF[1024];     //å‘é€BUFF
 uint8_t USART2_RX_BUF[1024];
 
-const char sta[]="AT+CWMODE=1";         //STA Ä£Ê½
-const char ap[] ="AT+CWMODE=2";         //AP Ä£Ê½
-const char sta_ap[] ="AT+CWMODE=3";     //STA_APÄ£Ê½
+const char sta[]="AT+CWMODE=1";         //STA æ¨¡å¼
+const char ap[] ="AT+CWMODE=2";         //AP æ¨¡å¼
+const char sta_ap[] ="AT+CWMODE=3";     //STA_APæ¨¡å¼
 
-//ESP8266½á¹¹Ìå
+//ESP8266ç»“æž„ä½“
 // typedef struct esp8266_wifi{
 //     uint8_t init_flag;
 //     char *ssid;
@@ -59,21 +59,21 @@ void init_uart2(void)
     UART2_Hander.Init.WordLength = UART_WORDLENGTH_8B;
     UART2_Hander.Init.StopBits = UART_STOPBITS_1;
     UART2_Hander.Init.Mode = UART_MODE_TX_RX;
-    UART2_Hander.Init.HwFlowCtl = UART_HWCONTROL_NONE;                      //ÎÞÓ²¼þ¿ØÖÆ               
+    UART2_Hander.Init.HwFlowCtl = UART_HWCONTROL_NONE;                      //æ— ç¡¬ä»¶æŽ§åˆ¶               
     HAL_UART_Init(&UART2_Hander);
     
     __HAL_UART_CLEAR_FLAG(&UART2_Hander,UART_FLAG_RXNE);
     __HAL_UART_ENABLE_IT(&UART2_Hander,USART_IT_RXNE);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
     HAL_NVIC_SetPriority(USART2_IRQn,2,0);
-    init_TIM7(1000,7999);                                       //100ms ÖÐ¶Ï
+    init_TIM7(1000,7999);                                       //100ms ä¸­æ–­
     USART2_RX_STA =0;
-    TIM7->CR1 &=~(1<<0);                                        //¹Ø±Õ¶¨Ê±Æ÷7
+    TIM7->CR1 &=~(1<<0);                                        //å…³é—­å®šæ—¶å™¨7
 }
 
 
-//´®¿Ú3,printf º¯Êý
-//È·±£Ò»´Î·¢ËÍÊý¾Ý²»³¬¹ýUSART3_MAX_SEND_LEN×Ö½Ú
+//ä¸²å£3,printf å‡½æ•°
+//ç¡®ä¿ä¸€æ¬¡å‘é€æ•°æ®ä¸è¶…è¿‡USART3_MAX_SEND_LENå­—èŠ‚
 void u2_printf(char* fmt,...)  
 {  
 	uint16_t i,j; 
@@ -81,20 +81,20 @@ void u2_printf(char* fmt,...)
 	va_start(ap,fmt);
 	vsprintf((char*)USART2_TX_BUF,fmt,ap);
 	va_end(ap);
-	i=strlen((const char*)USART2_TX_BUF);		//´Ë´Î·¢ËÍÊý¾ÝµÄ³¤¶È
-	for(j=0;j<i;j++)							//Ñ­»··¢ËÍÊý¾Ý
+	i=strlen((const char*)USART2_TX_BUF);		//æ­¤æ¬¡å‘é€æ•°æ®çš„é•¿åº¦
+	for(j=0;j<i;j++)							//å¾ªçŽ¯å‘é€æ•°æ®
 	{
-		while((USART2->ISR&0x40)==0);			//Ñ­»··¢ËÍ,Ö±µ½·¢ËÍÍê±Ï   
+		while((USART2->ISR&0x40)==0);			//å¾ªçŽ¯å‘é€,ç›´åˆ°å‘é€å®Œæ¯•   
 		USART2->TDR=USART2_TX_BUF[j];  
 	} 
 }
 
-//ÏòESP8266·¢ËÍ¶¨³¤Êý¾Ý
+//å‘ESP8266å‘é€å®šé•¿æ•°æ®
 void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
 {
     memset(USART2_RX_BUF,0,1024);
-    USART2_RX_STA =0;                   //½ÓÊÕ±êÖ¾ÖÃ0
-    //¶¨³¤·¢ËÍ
+    USART2_RX_STA =0;                   //æŽ¥æ”¶æ ‡å¿—ç½®0
+    //å®šé•¿å‘é€
     HAL_UART_Transmit(&UART2_Hander,buf,len,0xFFFF);
 
 }
@@ -102,17 +102,17 @@ void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
 void USART2_IRQHandler(void)
 {
     uint8_t res;
-    if(__HAL_UART_GET_IT(&UART2_Hander,UART_IT_RXNE) !=RESET)       //½ÓÊÕµ½Êý¾Ý
+    if(__HAL_UART_GET_IT(&UART2_Hander,UART_IT_RXNE) !=RESET)       //æŽ¥æ”¶åˆ°æ•°æ®
     {
         res =USART2->RDR;
         if((USART2_RX_STA &(1<<15))==0)
         {
             if(USART2_RX_STA <1024)
             {
-                TIM7->CNT =0;                                           //¼ÆÊýÆ÷Çå¿Õ
+                TIM7->CNT =0;                                           //è®¡æ•°å™¨æ¸…ç©º
                 if(USART2_RX_STA==0)
                 {
-                    TIM7->CR1 |=1<<0;                                   //Ê¹ÄÜ¶¨Ê±Æ÷7
+                    TIM7->CR1 |=1<<0;                                   //ä½¿èƒ½å®šæ—¶å™¨7
                 }
                 USART2_RX_BUF[USART2_RX_STA++]=res;
             }else
@@ -124,38 +124,38 @@ void USART2_IRQHandler(void)
     }
 }
 
-//ATK-ESP8266·¢ËÍÃüÁîºó,¼ì²â½ÓÊÕµ½µÄÓ¦´ð
-//str:ÆÚ´ýµÄÓ¦´ð½á¹û
-//·µ»ØÖµ:0,Ã»ÓÐµÃµ½ÆÚ´ýµÄÓ¦´ð½á¹û
-//ÆäËû,ÆÚ´ýÓ¦´ð½á¹ûµÄÎ»ÖÃ(strµÄÎ»ÖÃ)
+//ATK-ESP8266å‘é€å‘½ä»¤åŽ,æ£€æµ‹æŽ¥æ”¶åˆ°çš„åº”ç­”
+//str:æœŸå¾…çš„åº”ç­”ç»“æžœ
+//è¿”å›žå€¼:0,æ²¡æœ‰å¾—åˆ°æœŸå¾…çš„åº”ç­”ç»“æžœ
+//å…¶ä»–,æœŸå¾…åº”ç­”ç»“æžœçš„ä½ç½®(strçš„ä½ç½®)
 uint8_t * atk_8266_check_cmd(uint8_t *src)
 {
     char *strx =0;
     if(USART2_RX_STA &0x8000)
     {
-        USART2_RX_BUF[USART2_RX_STA &0x7FFF] =0;            //Ìí¼Ó×Ö·û´®µÄ½áÊø·û
-        strx =strstr((const char *)USART2_RX_BUF,(const char *)src);       //²éÕÒÓ¦´ð
+        USART2_RX_BUF[USART2_RX_STA &0x7FFF] =0;            //æ·»åŠ å­—ç¬¦ä¸²çš„ç»“æŸç¬¦
+        strx =strstr((const char *)USART2_RX_BUF,(const char *)src);       //æŸ¥æ‰¾åº”ç­”
     }
     return (uint8_t *)strx;
 }
 
 /*
-CMD :Ö¸Áî
-ack£ºÓ¦´ð ÎÞÓ¦´ð¼´ÊÇNULL
-waittime£º³¬Ê±Ê±³¤ µ¥Î»10ms
+CMD :æŒ‡ä»¤
+ackï¼šåº”ç­” æ— åº”ç­”å³æ˜¯NULL
+waittimeï¼šè¶…æ—¶æ—¶é•¿ å•ä½10ms
 */
 
 uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 {
     u8 res =0;
     USART2_RX_STA = 0;
-    u2_printf("%s\r\n",cmd);                                //·¢ËÍÃüÁî
+    u2_printf("%s\r\n",cmd);                                //å‘é€å‘½ä»¤
     if(ack && waittime)
     {
         while(--waittime)
         {
             delay_ms(10);
-            if(USART2_RX_STA &0x8000)                       //½ÓÊÕµ½ÆÚ´ýµÄÓ¦´ð½á¹û
+            if(USART2_RX_STA &0x8000)                       //æŽ¥æ”¶åˆ°æœŸå¾…çš„åº”ç­”ç»“æžœ
             {
                 if(atk_8266_check_cmd((u8 *)ack))
                 {
@@ -174,8 +174,8 @@ uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 
 
 /*
-ESP8266Ä£Ê½Ñ¡Ôñº¯Êý
-mode :Ä£Ê½Ñ¡Ôñ AP STA   AP+STA
+ESP8266æ¨¡å¼é€‰æ‹©å‡½æ•°
+mode :æ¨¡å¼é€‰æ‹© AP STA   AP+STA
 */
 u8 esp_8266_mode(char *mode)
 {
@@ -186,21 +186,21 @@ u8 esp_8266_mode(char *mode)
     {
         ret =1;
     }
-    if(atk_8266_send_cmd((u8*)"AT+RST",(u8*)"OK",60))               //ÖØÆôÉúÐ§
+    if(atk_8266_send_cmd((u8*)"AT+RST",(u8*)"OK",60))               //é‡å¯ç”Ÿæ•ˆ
     {
         ret =1;
     }
     return ret;
 }
 
-//esp8266 Á¬½Ówifiº¯Êý
-/*ssid :wifiÃû×Ö
-pass_word:ÃÜÂë
+//esp8266 è¿žæŽ¥wifiå‡½æ•°
+/*ssid :wifiåå­—
+pass_word:å¯†ç 
 */
 u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
 {
     u8 ret =0;
-    //Á¬½Ówifi
+    //è¿žæŽ¥wifi
     u8 p[50];
     sprintf((char *)p,"AT+CWJAP=\"%s\",\"%s\"",ssid,pass_word);
     printf("cmd=%s\r\n",p);
@@ -208,7 +208,7 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
     {
         ret =1;
     }
-    //¹Ø±Õ»ØÏÔ
+    //å…³é—­å›žæ˜¾
     if(atk_8266_send_cmd((u8 *)"ATE0",(u8 *)"OK",60))
     {
         ret =1;
@@ -217,10 +217,10 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
     
 }
 /*
-*Á¬½Ó·þÎñÆ÷
-*tpye£ºTCP»òÕßUDP
-*addr£ºipµØÖ·
-*port: ¶Ë¿ÚºÅ
+*è¿žæŽ¥æœåŠ¡å™¨
+*tpyeï¼šTCPæˆ–è€…UDP
+*addrï¼šipåœ°å€
+*port: ç«¯å£å·
 */
 u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 {
@@ -233,12 +233,12 @@ u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 	}
 	return ret;
 }
-//´ò¿ªÍ¸´«Ä£Ê½
+//æ‰“å¼€é€ä¼ æ¨¡å¼
 u8 esp_8266_passthrough(void)
 {
 	u8 ret=0;
 	u8 p[50];
-	//ÉèÖÃÎªÍ¸´«Ä£Ê½
+	//è®¾ç½®ä¸ºé€ä¼ æ¨¡å¼
 	if(atk_8266_send_cmd((u8 *)"AT+CIPMODE=1",(u8 *)"OK",70))
 	{
 		ret =1;
@@ -252,7 +252,7 @@ u8 esp_8266_passthrough(void)
 
 
 
-////Á¬½Ówifi
+////è¿žæŽ¥wifi
 //u8 esp_8266_sta_con(char *ssid,char *pass_word)
 //{
 //    u8 ret =0;
