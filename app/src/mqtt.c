@@ -8,7 +8,7 @@ char MQTT_UserName[100];                    //用户民
 char MQTT_PassWord[100];                    //秘钥
 
 u8 *mqtt_rxbuf;
-u8 *mqtt_txbuf;
+u8  mqtt_txbuf[256];
 u16 mqtt_rxlen;
 u16 mqtt_txlen;
 u8 _mqtt_rxbuf[256];                        //接收缓存区
@@ -57,11 +57,6 @@ const u8 parket_subAck[] ={0x90,0x03};
 //加密的密钥：DeviceSecret
 
 
-#define     BYTE0(temp)                        (*(uint8_t *)(&temp))
-#define     BYTE1(temp)                        (*(uint8_t *)(&temp)+1)
-#define     BYTE2(temp)                        (*(uint8_t *)(&temp)+2)
-#define     BYTE3(temp)                        (*(uint8_t *)(&temp)+3)
-
 //MQTT发送数据
 void MQTT_SendBuf(uint8_t *buf,uint16_t len)
 {
@@ -78,11 +73,11 @@ void MQTT_SendHeart(void)
 函数功能: 登录服务器
 函数返回值: 1表示成功 0表示失败
 */
-u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
+uint8_t MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
 {
     u8 i,j;
     u8 encodedByte;
-    int ClientIDlen =strlen(ClientID);
+    int ClientIDlen =strlen(ClientID);                                              //0x27    0x13          0x28
     int Usernamelen =strlen(Username);
     int Passwordlen =strlen(Password);
     int Datalen;
@@ -92,6 +87,7 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     //固定报头
 	//控制报文类型
     mqtt_txbuf[mqtt_txlen++]=0x10;
+    printf("Datalen=%d\r\n",Datalen);
     do{
         encodedByte =Datalen %128;
         Datalen =Datalen/128;
@@ -99,7 +95,8 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
             encodedByte =encodedByte |128;                  //把最高为置1表示还有延续字节
         mqtt_txbuf[mqtt_txlen++] =encodedByte;
     }while(Datalen>0);
-    
+//    printf("mqtt_txbuf[1]=0x%x\r\n",mqtt_txbuf[1]);
+//    printf("mqtt_txlen=%d\r\n",mqtt_txlen);
     //可变报头  (包含四个字段 协议名(protocol name) 协议级别(protocol level) 连接标志(Connect Flags) 保持连接(keep alive)
     //协议名
     mqtt_txbuf[mqtt_txlen++] =0;
@@ -116,13 +113,14 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     mqtt_txbuf[mqtt_txlen++] =0xc2;
     //保持连接 keep alive 是一个以秒为单位的时间间隔，表示为一个16位的字 ，它是指在客户端发送
     mqtt_txbuf[mqtt_txlen++] =0x00;
-    mqtt_txbuf[mqtt_txlen++] =0x64;         //100s一个心跳包
+    mqtt_txbuf[mqtt_txlen++] =60;         //60s一个心跳包
     
     //客户端ID有效载荷字段
-    mqtt_txbuf[mqtt_txlen++] =BYTE1(ClientIDlen);                       // Client ID length MSB
+    mqtt_txbuf[mqtt_txlen++] =BYTE1(ClientIDlen);                      // Client ID length MSB
     mqtt_txbuf[mqtt_txlen++] =BYTE0(ClientIDlen);                       // Client ID length LSB
     memcpy(&mqtt_txbuf[mqtt_txlen],ClientID,ClientIDlen);
     mqtt_txlen +=ClientIDlen;
+    printf("clientIDlen=%d\r\n",ClientIDlen);
     
     //用户名有效载荷字段
     if(Usernamelen>0)
@@ -131,6 +129,7 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
         mqtt_txbuf[mqtt_txlen++] =BYTE0(Usernamelen);
         memcpy(&mqtt_txbuf[mqtt_txlen],Username,Usernamelen);
         mqtt_txlen +=Usernamelen;
+        printf("Usernamelen=%d\r\n",Usernamelen);
     }
     //密码有效载荷字段
     if(Passwordlen>0)
@@ -139,9 +138,14 @@ u8 MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
         mqtt_txbuf[mqtt_txlen++] =BYTE0(Passwordlen);
         memcpy(&mqtt_txbuf[mqtt_txlen],Password,Passwordlen);
         mqtt_txlen +=Passwordlen;
+        printf("Passwordlen=%d\r\n",Passwordlen);
     }
     uint8_t cnt =2;
     uint8_t wait;
+    for(uint8_t i=0;i<mqtt_txlen;i++)
+    {
+        printf("%x  ",mqtt_txbuf[i]);
+    }
     while(cnt--)
     {
         memset(USART2_RX_BUF,0,sizeof(USART2_RX_BUF));
@@ -192,7 +196,7 @@ u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
             encodedByte |=128;
         }
         mqtt_txbuf[mqtt_txlen++]=encodedByte;
-    }while(Datalen >0)
+    }while(Datalen >0);
 
 
     mqtt_txbuf[mqtt_txlen++] =BYTE1(topicLength);                           //主题长度MSB
@@ -250,7 +254,7 @@ do{
         encodedByte |=0x80;
     }
     mqtt_txbuf[mqtt_txlen++]=encodedByte;
-}while(Datalen >0)
+}while(Datalen >0);
 
 //报文标识符
 mqtt_txbuf[mqtt_txlen++]=0x00;                          //MSB

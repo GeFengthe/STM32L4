@@ -107,3 +107,4 @@
 .\objects\main.o: .\FreeRTOS\port\include\list.h
 .\objects\main.o: .\FreeRTOS\port\include\queue.h
 .\objects\main.o: .\FreeRTOS\port\include\semphr.h
+.\objects\main.o: .\APP\inc\mqtt.h

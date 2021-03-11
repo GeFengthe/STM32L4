@@ -20,9 +20,9 @@ void delay_us(u32 nus)
 	
 }
 
-void delay_ms(u16 nms)
+void delay_ms(u32 nms)
 {
-    delay_us(nms *1000);
+    delay_us(nms*1000);
 }
 
 

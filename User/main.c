@@ -8,7 +8,9 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
-#include "semphr.h"                                                 //使用信号量要包含的头文件
+#include "semphr.h"             //使用信号量要包含的头文件
+#include "mqtt.h"
+
 
 #define LED_R_Pin               GPIO_PIN_7
 #define LED_G_Pin               GPIO_PIN_8
@@ -18,6 +20,14 @@
 
 #define LED_R_ON                HAL_GPIO_WritePin(LED_Port,LED_R_Pin,GPIO_PIN_RESET)
 #define LED_R_OFF               HAL_GPIO_WritePin(LED_Port,LED_R_Pin,GPIO_PIN_SET)
+
+
+//阿里云服务器信息
+#define MQTT_BROKERADDRESS              "a16NWgAwqsz.iot-as-mqtt.cn-shanghai.aliyuncs.com"
+#define MQTT_PORTNUM                    1883
+#define MQTT_CLIENTID                   "00001|securemode=3,signmethod=hmacsha1|"
+#define MQTT_USARNAME                   "Device2&a16NWgAwqsz"
+#define MQTT_PASSWORD                   "630CF42D5F5CF44F51C8889800702BD0076E813E"          //
 
 void LED_Init(void);
 //任务入口函数
@@ -91,7 +101,7 @@ static void appmain(void *parameter)
     }
     xReturn = xTaskCreate((TaskHandle_t )IOT_Esp8266,
                           (const char *)"ESP8266",
-                          (const uint16_t)512,
+                          (const uint16_t)512*5,
                           (void *)NULL,
                           (UBaseType_t)3,
                           (TaskHandle_t *)&ESP8266_Handle);
@@ -117,53 +127,15 @@ static void appmain(void *parameter)
 
 void IOT_Esp8266(void *parameter)
 {
-    uint8_t err;
-    static uint8_t wifi_stu=1;                                              //ESP8266需要初始换连接服务器
-    char *p=NULL;
-    printf(" now in IOT_Esp8266\r\n");
-    if(wifi_stu ==1)
-    {
-        err=atk_8266_send_cmd((uint8_t *)"AT",(uint8_t *)"OK",60);
-        if(err ==1)
-        {
-            printf("ESP8266 AT test Error!\r\n");
-            return;
-        }
-        p="AT+CWMODE=3";                                    //选择模式
-        err=esp_8266_mode(p);
-        if(err ==1)
-        {
-            printf("ESP8266 MODE Error");
-            return ;
-        }
-        memset(p,0,strlen("AT+CWMODE=3"));
-        err = esp_8266_connect_wifi("HUAWEI-2303","zyj15251884308");
-        if(err ==1)
-        {
-            printf("ESP8266 connect wifi err\r\n");
-            return ;
-        }
-        err =esp_8266_connect_server("TCP","192.168.3.40",8080);
-        if(err ==1)
-        {
-            printf("ESP8266 connect server err\r\n");
-        }
-        err =esp_8266_passthrough();
-        if(err ==1)
-        {
-            printf("ESP8266 passthrough mode erroe\r\n");
-        }
-        wifi_stu =0;
-
-    }
+    uint32_t test =0x12345678;
     while(1)
     {
-        if(xSemaphoreTake(esp8266_Semaphore,portMAX_DELAY)==pdTRUE)            //无限等待信号量
-        {
-            esp_8266_SendData((u8 *)"ESP8266",strlen("ESP8266"));
-            printf("send data\r\n");
-        }
-        
+        printf("0x%x\r\n",BYTE0(test));
+        printf("0x%x\r\n",BYTE1(test));
+        printf("0x%x\r\n",BYTE2(test));
+        printf("0x%x\r\n",BYTE3(test));
+        delay_ms(59000);
+
     }
 
 }

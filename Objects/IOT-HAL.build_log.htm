@@ -21,12 +21,13 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-C:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
+c:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
 Project File Date:  02/28/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
+compiling delay.c...
 compiling main.c...
 .\BSP\inc\spi.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -34,22 +35,24 @@ compiling main.c...
   #endif
 .\BSP\inc\timer.h(7): warning:  #1-D: last line of file ends without a newline
   #endif
-.\BSP\inc\esp8266.h(36): warning:  #1-D: last line of file ends without a newline
+.\BSP\inc\esp8266.h(37): warning:  #1-D: last line of file ends without a newline
   #endif
-User\main.c(53): warning:  #191-D: type qualifier is meaningless on cast type
+.\APP\inc\mqtt.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+User\main.c(63): warning:  #191-D: type qualifier is meaningless on cast type
   						  (const uint16_t)512,							//任务栈大小
-User\main.c(94): warning:  #191-D: type qualifier is meaningless on cast type
-                            (const uint16_t)512,
-User\main.c(92): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
+User\main.c(104): warning:  #191-D: type qualifier is meaningless on cast type
+                            (const uint16_t)512*5,
+User\main.c(102): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
       xReturn = xTaskCreate((TaskHandle_t )IOT_Esp8266,
-User\main.c(105): warning:  #191-D: type qualifier is meaningless on cast type
+User\main.c(115): warning:  #191-D: type qualifier is meaningless on cast type
                             (const uint16_t)512,
-User\main.c(103): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
+User\main.c(113): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
       xReturn = xTaskCreate((TaskHandle_t )IOT_Contral,
-User\main.c: 9 warnings, 0 errors
+User\main.c: 10 warnings, 0 errors
 linking...
-Program Size: Code=18284 RO-data=496 RW-data=124 ZI-data=21252  
-".\Objects\IOT-HAL.axf" - 0 Error(s), 9 Warning(s).
+Program Size: Code=16752 RO-data=496 RW-data=124 ZI-data=21252  
+".\Objects\IOT-HAL.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -63,7 +66,7 @@ Package Vendor: Keil
   E:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>

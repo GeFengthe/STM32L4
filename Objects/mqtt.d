@@ -89,3 +89,8 @@
 .\objects\mqtt.o: .\libraries\Inc\stm32l4xx_hal_gfxmmu.h
 .\objects\mqtt.o: .\System\sys\sys.h
 .\objects\mqtt.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\mqtt.o: .\BSP\inc\esp8266.h
+.\objects\mqtt.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\mqtt.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\mqtt.o: .\System\delay\delay.h
+.\objects\mqtt.o: .\BSP\inc\timer.h

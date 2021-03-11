@@ -10,6 +10,8 @@ WIFI :HUAWEI-2303
 #define WIFISTA_ENCRYPTION              "wpawpa2_aes"               //wpa/wpa2 aes 加密方式
 
 
+
+
 uint16_t USART2_RX_STA =0;              //接收结束标志
 static uint8_t USART2_TX_BUF[1024];     //发送BUFF
 uint8_t USART2_RX_BUF[1024];
@@ -225,9 +227,10 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
 u8 esp_8266_connect_server(char *type,char *addr,u16 port)
 {
     u8 ret =0;
-    u8 p[50];
+    u8 p[500];
+    memset(USART2_RX_BUF,0,1024);
     sprintf((char *)p,"AT+CIPSTART=\"%s\",\"%s\",%d",type,addr,port);
-	if(atk_8266_send_cmd(p,(u8*)"OK",100))
+	if(atk_8266_send_cmd(p,(u8*)"OK",80))
 	{
 		ret =1;
 	}
@@ -239,17 +242,21 @@ u8 esp_8266_passthrough(void)
 	u8 ret=0;
 	u8 p[50];
 	//设置为透传模式
-	if(atk_8266_send_cmd((u8 *)"AT+CIPMODE=1",(u8 *)"OK",70))
+	if(atk_8266_send_cmd((u8 *)"AT+CIPMODE=1",(u8 *)"OK",50))
 	{
 		ret =1;
 	}
-	if(atk_8266_send_cmd((u8 *)"AT+CIPSEND",(u8 *)"OK",60))
+	if(atk_8266_send_cmd((u8 *)"AT+CIPSEND",(u8 *)">",50))
 	{
 		ret =1;
 	}
 	return ret;
 }
 
+void ESP8266_Init(void)
+{
+
+}
 
 
 ////连接wifi
