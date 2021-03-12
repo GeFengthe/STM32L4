@@ -29,7 +29,11 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word);
 u8 esp_8266_connect_server(char *type,char *addr,u16 port);
 u8 esp_8266_passthrough(void);
 extern void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len);
-
+extern void ESP8266_ExitUnvarnishedTrans(void);
+extern uint8_t ESP8266_Check(void);
+extern uint8_t ESP8266_Init(void);
+extern void ESP8266_Restore(void);
+extern uint8_t ESP8266_ConnectAP(char *ssid,char *pswd);
 //uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime);  
 //u8 esp_8266_sta_con(char *ssid,char *pass_word);
 //u8 esp_8266_test_client(void);
