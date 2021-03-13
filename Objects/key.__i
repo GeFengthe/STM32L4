@@ -1,0 +1,6 @@
+--c99 --gnu -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\libraries -I .\libraries\Inc -I .\libraries\Inc\Legacy -I .\BSP\inc -I .\System\delay -I .\System\sys -I .\System\usart -I .\User -I .\APP\inc -I .\FreeRTOS\port\include -I .\FreeRTOS\port\RVDS\ARM_CM4F
+-I.\RTE\_Target_1
+-IE:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
+-IE:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="525" -DSTM32L475xx -DUSE_HAL_DRIVER -DSTM32L475xx
+-o .\objects\key.o --omf_browse .\objects\key.crf --depend .\objects\key.d "APP\src\key.c"
