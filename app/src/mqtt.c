@@ -1,5 +1,4 @@
 #include "mqtt.h"
-#include "sys.h"
 #include "string.h"
 #include "esp8266.h"
 
@@ -142,15 +141,15 @@ uint8_t MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     }
     uint8_t cnt =2;
     uint8_t wait;
-    for(uint8_t i=0;i<mqtt_txlen;i++)
-    {
-        printf("%x  ",mqtt_txbuf[i]);
-    }
+    // for(uint8_t i=0;i<mqtt_txlen;i++)
+    // {
+    //     printf("%x  ",mqtt_txbuf[i]);
+    // }
     while(cnt--)
     {
         memset(USART2_RX_BUF,0,sizeof(USART2_RX_BUF));
         MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
-        wait=30;
+        wait=50;
         while(wait--)
         {
             if(USART2_RX_BUF[0]==parket_connetAck[0] && USART2_RX_BUF[1]==parket_connetAck[1])

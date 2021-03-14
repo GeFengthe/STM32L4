@@ -12,6 +12,12 @@
 #define IIC_SDA(n)          (n?HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_SET):HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_RESET))
 #define READ_SDA            HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_1)                  //输入SDA
 
+#define AHT10_IIC_ADDR              0x38                //AHT10 IIC地址
+
+#define AHT10_CALIBRATION_CMD           0xE1                //校准命令(上电只需要发送一次)
+#define AHT10_NORMAL_CMD                0xA8                //正常工作模式
+#define AHT10_GET_DATA                  0xAC                //读取数据命令
+
 void IIC_Init(void);
 void IIC_Start(void);
 void IIC_Stop(void);
@@ -21,5 +27,8 @@ void IIC_NAck(void);
 void IIC_Send_Byte(uint8_t txd);
 uint8_t IIC_Read_Byte(uint8_t ack);
 
+extern uint8_t AHT10_Init(void);
+extern float AHT10_Read_Humidity(void);
+extern float AHT10_Read_Temperature(void);
 
 #endif

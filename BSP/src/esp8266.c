@@ -4,8 +4,7 @@ WIFI :HUAWEI-2303
 密码: zyj15251884308
 
 */
-#define WIFISTA_SSID                    "HUAWEI-2303"               //wifi名称
-#define WIFISTA_PASSWORD                "zyj15251884308"            //连接密码
+
 #define WIFISTA_PORTNUM                 "8080"                      //连接端口号
 #define WIFISTA_ENCRYPTION              "wpawpa2_aes"               //wpa/wpa2 aes 加密方式
 
@@ -91,14 +90,11 @@ void u2_printf(char* fmt,...)
 	} 
 }
 
-//向ESP8266发送定长数据
-void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
+//串口1发送一个字节
+static void USART2_SendOneByte(uint8_t byte)
 {
-    memset(USART2_RX_BUF,0,1024);
-    USART2_RX_STA =0;                   //接收标志置0
-    //定长发送
-    HAL_UART_Transmit(&UART2_Hander,buf,len,0xFFFF);
-
+    ((UART_HandleTypeDef *)&UART2_Hander)->Instance->TDR =((uint16_t)byte &(uint16_t)0x01FF);
+    while((((UART_HandleTypeDef *)&UART2_Hander)->Instance->ISR&0x40)==0);                          //等待发送完成
 }
 
 void USART2_IRQHandler(void)
@@ -125,6 +121,249 @@ void USART2_IRQHandler(void)
         __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
     }
 }
+
+//向ESP8266发送定长数据
+void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
+{
+    memset(USART2_RX_BUF,0,1024);
+    USART2_RX_STA =0;                   //接收标志置0
+    //定长发送
+    HAL_UART_Transmit(&UART2_Hander,buf,len,0xFFFF);
+
+}
+//向ESP8266发送字符串
+void ESP8266_ATSendString(char * str)
+{
+    memset( USART2_RX_BUF,0,1024);
+    USART2_RX_STA =0;
+    while(*str)     USART2_SendOneByte(*str++);
+}
+
+//退出透传
+void ESP8266_ExitUnvarnishedTrans(void)
+{
+    ESP8266_ATSendString("+++");
+    delay_ms(50);
+    ESP8266_ATSendString("+++");
+    delay_ms(50);
+}
+
+//查找字符串中是否包含另一个字符串
+uint8_t FindStr(char *dest,char *src,uint16_t retry_nms)
+{
+    retry_nms/=10;
+    while(strstr(dest,src)==0 && retry_nms--)
+    {
+        delay_ms(10);
+    }
+    if(retry_nms)
+    {
+        return 1;
+    }
+    return 0;
+}
+/**
+ * 功能：检查ESP8266是否正常
+ * 参数：None
+ * 返回值：ESP8266返回状态
+ * 非0 ESP8266正常
+*/
+
+uint8_t ESP8266_Check(void)
+{
+    uint8_t check_cnt=5;
+    while(check_cnt--)
+    {
+        memset(USART2_RX_BUF,0,1024);
+        ESP8266_ATSendString("AT\r\n");
+        if(FindStr((char *)USART2_RX_BUF,"OK",200)!=0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
+/**
+ * 功能：初始化ESP8266
+ * 参数：NOne
+ * 返回值：初始化结果，非0初始化成功，0为失败
+ * 
+ * 
+ * 
+*/
+uint8_t ESP8266_Init(void)
+{
+    memset(USART2_TX_BUF,0,1024);
+    memset(USART2_RX_BUF,0,1024);
+
+    ESP8266_ExitUnvarnishedTrans();                         //退出透传
+    delay_ms(500);
+    ESP8266_ATSendString("AT+RST\r\n");
+    delay_ms(800);
+    if(ESP8266_Check()==0)                                  //使用AT指令查询ESP8266是否存在
+    {
+        return 0;
+    }
+    memset(USART2_RX_BUF,0,1024);                           //清空缓冲区
+    ESP8266_ATSendString("ATE0\r\n");                           //关闭回显
+    if(FindStr((char *)USART2_RX_BUF,"OK",500)==0)      
+    {
+        return 0;                                           //设置不成功
+    }
+    return 1;                                               //设置成功
+
+}
+
+/**
+ * 功能：恢复出厂设置
+ * 参数：None
+ * 返回值：None
+ * 
+ * 
+*/
+void ESP8266_Restore(void)
+{
+    ESP8266_ExitUnvarnishedTrans();                                 //退出透传
+    delay_ms(500);
+    ESP8266_ATSendString("AT+RESTORE\r\n");                         //恢复出厂
+}
+
+/**
+ * 功能：连接热点
+ * 参数:
+ *          ssid:热点名
+ *          pwd:热点密码
+ * 返回值:连接结果，非0连接成功，0连接失败
+ * 
+ * 
+*/
+uint8_t ESP8266_ConnectAP(char *ssid,char *pswd)
+{
+    uint8_t cnt =5;
+    while(cnt--)
+    {
+        memset(USART2_RX_BUF,0,1024);
+        ESP8266_ATSendString("AT+CWMODE_CUR=1\r\n");                            //设置为station模式 （——cur是代表不保存到flash)
+        if(FindStr((char*)USART2_RX_BUF,"OK",200)!=0)
+        {
+            break;
+        }
+    }
+    if(cnt==0)
+    {
+        return 0;
+    }
+    cnt =2;
+    while(cnt--)
+    {
+        memset(USART2_TX_BUF,0,1024);
+        memset(USART2_RX_BUF,0,1024);
+        sprintf((char *)USART2_RX_BUF,"AT+CWJAP_CUR=\"%s\",\"%s\"\r\n",ssid,pswd);                  //连接目标AP
+        ESP8266_ATSendString((char *)USART2_RX_BUF);
+        if(FindStr((char *)USART2_RX_BUF,"OK",8000)!=0)                                             //连接成功且分配IP
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+/**
+ * 开启透传模式
+ * 
+ **/
+ static uint8_t ESP8266_OpenTransmission(void)
+ {
+     //设置透传模式
+     uint8_t cnt=2;
+     while(cnt--)
+     {
+         memset(USART2_RX_BUF,0,1024);
+         ESP8266_ATSendString("AT+CIPMODE=1\r\n");
+         if(FindStr((char*)USART2_RX_BUF,"OK",200)!=0)
+         {
+             return 1;
+         }
+         
+     }
+     return 0;
+ } 
+/**
+ * 功能：使用指定协议(TCP/UDP)连接到服务器
+ * 参数：
+ *         mode:协议类型 "TCP","UDP"
+ *         ip:目标服务器IP
+ *         port:目标是服务器端口号
+ * 返回值：
+ *         连接结果,非0连接成功,0连接失败
+ * 说明： 
+ *         失败的原因有以下几种(UART通信和ESP8266正常情况下)
+ *         1. 远程服务器IP和端口号有误
+ *         2. 未连接AP
+ *         3. 服务器端禁止添加(一般不会发生)
+ */
+uint8_t ESP8266_ConnectServer(char *mode,char* ip,uint16_t port)
+{
+    uint8_t cnt;
+    ESP8266_ExitUnvarnishedTrans();                                 //多次连接需退出透传
+    delay_ms(500);
+    cnt =2;
+    while(cnt--)
+    {
+        memset((char*)USART2_TX_BUF,0,1024);
+        memset((char*)USART2_RX_BUF,0,1024);
+        sprintf((char*)USART2_TX_BUF,"AT+CIPSTART=\"%s\",\"%s\",%d\r\n",mode,ip,port);
+        ESP8266_ATSendString((char*)USART2_TX_BUF);
+        if(FindStr((char*)USART2_RX_BUF,"CONNECT",4000)!=0 )
+        {
+            break;
+        }
+    }
+    if(cnt ==0)
+    {
+        return 0;
+    }
+    //设置透传模式
+    if(ESP8266_OpenTransmission()==0)   return 0;
+
+    //开启发送状态
+    cnt=2;
+    while(cnt--)
+    {
+        memset(USART2_RX_BUF,0,1024);
+        ESP8266_ATSendString("AT+CIPSEND\r\n");
+        if(FindStr((char*)USART2_RX_BUF,">",200)!=0)
+        {
+            return -1;
+        }
+    }
+    return 0;
+}
+/**
+ * 功能：主动和服务器断开连接
+ * 参数：None
+ * 返回值：
+ *         连接结果,非0断开成功,0断开失败
+ */
+uint8_t DisconnectServer(void)
+{
+    uint8_t cnt=2;
+    ESP8266_ExitUnvarnishedTrans();                         //退出透传
+    delay_ms(500);
+    while(cnt--)
+    {
+        memset(USART2_RX_BUF,0,1024);                       //清空缓冲区
+        ESP8266_ATSendString("AT+CIPCLOSE\r\n");
+        if(FindStr((char*)USART2_RX_BUF,"CLOSED",200)!=0)
+        {
+            break;
+        }
+    }
+    if(cnt) return 1;
+    return 0;
+}
+
 
 //ATK-ESP8266发送命令后,检测接收到的应答
 //str:期待的应答结果
@@ -218,6 +457,11 @@ u8 esp_8266_connect_wifi(char *ssid,char *pass_word)
     return ret;
     
 }
+
+
+
+
+
 /*
 *连接服务器
 *tpye：TCP或者UDP
@@ -253,10 +497,6 @@ u8 esp_8266_passthrough(void)
 	return ret;
 }
 
-void ESP8266_Init(void)
-{
-
-}
 
 
 ////连接wifi

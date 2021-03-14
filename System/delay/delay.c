@@ -19,7 +19,7 @@ void delay_us(u32 nus)
     }
 	
 }
-
+//最大五十几秒
 void delay_ms(u32 nms)
 {
     delay_us(nms*1000);

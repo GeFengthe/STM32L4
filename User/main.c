@@ -10,6 +10,7 @@
 #include "queue.h"
 #include "semphr.h"             //使用信号量要包含的头文件
 #include "mqtt.h"
+#include "aht10.h"
 
 
 #define LED_R_Pin               GPIO_PIN_7
@@ -21,13 +22,18 @@
 #define LED_R_ON                HAL_GPIO_WritePin(LED_Port,LED_R_Pin,GPIO_PIN_RESET)
 #define LED_R_OFF               HAL_GPIO_WritePin(LED_Port,LED_R_Pin,GPIO_PIN_SET)
 
-
+#define WIFISTA_SSID                    "HUAWEI-2303"               //wifi名称
+#define WIFISTA_PASSWORD                "zyj15251884308"            //连接密码
 //阿里云服务器信息
 #define MQTT_BROKERADDRESS              "a16NWgAwqsz.iot-as-mqtt.cn-shanghai.aliyuncs.com"
 #define MQTT_PORTNUM                    1883
 #define MQTT_CLIENTID                   "00001|securemode=3,signmethod=hmacsha1|"
 #define MQTT_USARNAME                   "Device2&a16NWgAwqsz"
 #define MQTT_PASSWORD                   "630CF42D5F5CF44F51C8889800702BD0076E813E"          //
+
+#define MQTT_PUBLISH_TOPIC              "/sys/a16NWgAwqsz/Device2/thing/event/property/post"
+#define MQTT_SUBSCRIBE_TOPIC            "/sys/a16NWgAwqsz/Device2/thing/service/property/set"
+
 
 void LED_Init(void);
 //任务入口函数
@@ -36,6 +42,8 @@ static void IOT_Esp8266(void *parameter);
 static void IOT_Contral(void *parameter);
 
 
+//MQTT业务初始化
+void ESP8266_MQTT_Init(void);
 
 
 
@@ -46,6 +54,9 @@ static TaskHandle_t IOTContral_Handle =NULL;
 
 //信号量
 SemaphoreHandle_t esp8266_Semaphore;                                    //ESP8266信号量
+
+//MQTT数据上报缓存区
+char mqtt_message[300];
 
 int main()
 {
@@ -72,22 +83,6 @@ int main()
     {
         
     }    
-}
-
-//灯初始化函数
-void LED_Init(void)
-{
-    GPIO_InitTypeDef        GPIO_InitStructure;
-    
-    __HAL_RCC_GPIOE_CLK_ENABLE();
-    
-    GPIO_InitStructure.Pin=GPIO_PIN_7;
-    GPIO_InitStructure.Mode=GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStructure.Speed=GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStructure.Pull=GPIO_PULLUP;
-    HAL_GPIO_Init(GPIOE,&GPIO_InitStructure);
-    
-    HAL_GPIO_WritePin(GPIOE,GPIO_PIN_7,GPIO_PIN_SET);
 }
 
 static void appmain(void *parameter)
@@ -127,14 +122,28 @@ static void appmain(void *parameter)
 
 void IOT_Esp8266(void *parameter)
 {
-    uint32_t test =0x12345678;
+    uint8_t tcnt=0;
+    AHT10_Init();
+    ESP8266_MQTT_Init();
+    float temp,hum;
     while(1)
     {
-        printf("0x%x\r\n",BYTE0(test));
-        printf("0x%x\r\n",BYTE1(test));
-        printf("0x%x\r\n",BYTE2(test));
-        printf("0x%x\r\n",BYTE3(test));
-        delay_ms(59000);
+        if(tcnt %10 ==0)
+        {
+            temp =AHT10_Read_Temperature();
+            hum =AHT10_Read_Humidity();
+            sprintf(mqtt_message,
+            "{\"method\":\"thing.service.property.set\",\"id\":\"0000000001\",\"params\":{\
+                                \"temperature\":%.1f,\
+                                \"humidity\":%.1f\
+                                },\"version\":\"1.0\"}",
+                                temp,hum);
+            MQTT_PublishData_Pack(MQTT_PUBLISH_TOPIC,mqtt_message,0);
+            printf(" temp =%.1f,  hum=%.1f\r\n",temp,hum);
+            // MQTT_SendHeart();
+            delay_ms(5500);
+        }
+        tcnt++;
 
     }
 
@@ -159,4 +168,96 @@ void IOT_Contral(void *parameter)
         vTaskDelay(1000);   
     }
 
+}
+
+/******************************  进入错误模式代码  *****************************/
+//进入错误模式等待手动重启
+void Enter_ErrorMode(uint8_t mode)
+{
+    LED_R_ON;
+    while(1)
+    {
+        switch (mode)
+        {
+        case 0: printf("ESP8266初始化失败!\r\n");
+            break;
+        case 1: printf("ESP8266连接热点失败!\r\n");
+            break;
+        case 2: printf("ESP8266连接阿里云服务器失败!\r\n");
+            break;
+        case 3: printf("ESP8266阿里云MQTT登录失败\r\n");
+            break;
+        case 4: printf("ESP8266阿里云MQTT订阅主题失败!\r\n");
+            break;
+        
+        default: printf("Nothing\r\n");
+            break;
+        }
+        printf("请重启开发板\r\n");
+        delay_ms(1000);
+    }
+}
+
+/******************************  STM32 MQTT业务代码  *****************************/
+//MQTT初始化函数
+void ESP8266_MQTT_Init(void)
+{
+    uint8_t status=0;
+    if(ESP8266_Init())
+    {
+        printf("ESP8266初始化成功!\r\n");
+        status++;
+    }else{
+        Enter_ErrorMode(0);
+    }
+    //连接热点
+    if(status==1)
+    {
+        if(ESP8266_ConnectAP(WIFISTA_SSID,WIFISTA_PASSWORD))
+        {
+            printf("ESP8266连接热点成功!\r\n");
+            status++;
+        }
+        else{
+            Enter_ErrorMode(1);
+        }
+    }
+    //连接阿里云
+    if(status==2)
+    {
+        if(ESP8266_ConnectServer("TCP",MQTT_BROKERADDRESS,1883)!=0)
+        {
+            printf("ESP8266连接阿里云服务器成功!\r\n");
+            status++;
+        }else{
+            Enter_ErrorMode(2);
+        }
+    }
+    //登录MQTT
+    if(status==3)
+    {
+        if(MQTT_Connect_Pack(MQTT_CLIENTID,MQTT_USARNAME,MQTT_PASSWORD) !=0)
+        {
+            printf("ESP8266阿里云MQTT登录成功!\r\n");
+            status++;
+        }else{
+            Enter_ErrorMode(3);
+        }
+    }
+}
+
+//灯初始化函数
+void LED_Init(void)
+{
+    GPIO_InitTypeDef        GPIO_InitStructure;
+    
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    
+    GPIO_InitStructure.Pin=GPIO_PIN_7;
+    GPIO_InitStructure.Mode=GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStructure.Speed=GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStructure.Pull=GPIO_PULLUP;
+    HAL_GPIO_Init(GPIOE,&GPIO_InitStructure);
+    
+    HAL_GPIO_WritePin(GPIOE,GPIO_PIN_7,GPIO_PIN_SET);
 }
