@@ -10,8 +10,8 @@ u8 *mqtt_rxbuf;
 u8  mqtt_txbuf[256];
 u16 mqtt_rxlen;
 u16 mqtt_txlen;
-u8 _mqtt_rxbuf[256];                        //接收缓存区
-u8 _mqtt_txbuf[256];                        //发送缓存区
+u8 _mqtt_rxbuf[512];                        //接收缓存区
+u8 _mqtt_txbuf[512];                        //发送缓存区
 
 typedef enum{
     //名字        值           报文流动方向          描述
@@ -74,13 +74,13 @@ void MQTT_SendHeart(void)
 */
 uint8_t MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
 {
-    u8 i,j;
     u8 encodedByte;
     int ClientIDlen =strlen(ClientID);                                              //0x27    0x13          0x28
     int Usernamelen =strlen(Username);
     int Passwordlen =strlen(Password);
     int Datalen;
     mqtt_txlen =0;
+    memset(mqtt_txbuf,0,512);
     //可变报头+Payload  每个字段包含两个字节的长度标识
     Datalen = 10+(ClientIDlen+2)+(Usernamelen+2)+(Passwordlen+2);
     //固定报头
@@ -174,18 +174,18 @@ u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
     int messageLength =strlen(message);
     int Datalen;
     mqtt_txlen =0;
-    memset(mqtt_txbuf,0,mqtt_txlen);
+    memset(mqtt_txbuf,0,512);
     //有效载荷的长度
     if(qos)
     {
-        //数据长度   主题名          标识符 有效载荷
-        mqtt_txlen =(topicLength+2)+2+messageLength;
+    //数据长度   主题名          标识符 有效载荷
+        Datalen =(topicLength+2)+2+messageLength;
     }else
     {
-        mqtt_txlen =(topicLength+2)+messageLength;                              //qos=0的消息没有标识符
+        Datalen =(topicLength+2)+messageLength;                              //qos=0的消息没有标识符
     }
-//固定报头
-    mqtt_txbuf[mqtt_txlen++] =0x30;                                              //MQTT Message Type PUBLISH
+    //固定报头
+    mqtt_txbuf[mqtt_txlen++]=0x30;                                              //MQTT Message Type PUBLISH
     do
     {
         encodedByte=Datalen %128;
@@ -196,23 +196,27 @@ u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
         }
         mqtt_txbuf[mqtt_txlen++]=encodedByte;
     }while(Datalen >0);
-
+    
 
     mqtt_txbuf[mqtt_txlen++] =BYTE1(topicLength);                           //主题长度MSB
     mqtt_txbuf[mqtt_txlen++] =BYTE0(topicLength);                           //主题长度LSB
-    memcpy(mqtt_txbuf,topic,topicLength);
+    memcpy(&mqtt_txbuf[mqtt_txlen],topic,topicLength);
     mqtt_txlen+=topicLength;
-
-    //报文标识符
+    
     if(qos)
     {
         mqtt_txbuf[mqtt_txlen++] = BYTE1(id);
         mqtt_txbuf[mqtt_txlen++] = BYTE0(id);
         id++;
     }
-//有效载荷
+    
     memcpy(&mqtt_txbuf[mqtt_txlen],message,messageLength);
     mqtt_txlen +=messageLength;
+    printf("messagelen=%d  topiclen=%d  mqtt_txlen=%d\r\n",messageLength,topicLength,mqtt_txlen);
+//    for(uint16_t i=0;i<mqtt_txlen;i++)
+//    {
+//        printf(" 0x%x   |",mqtt_txbuf[i]);
+//    }
     memset(USART2_RX_BUF,0,1024);
     MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
     return mqtt_txlen;
@@ -228,11 +232,13 @@ u8 MQTT_PublishData_Pack(char *topic ,char *message, u8 qos)
 */
 uint8_t MQTT_SubsrcibeTopic(char *topic,uint8_t qos,uint8_t whether)
 {
-    uint8_t i,j;
-    mqtt_txlen =0;
+    uint8_t cnt =2;
+    uint8_t wait;
     int topiclen =strlen(topic);                    //可变报头的长度（2字节）加上有效载荷的长度
     int Datalen =0;
     uint8_t encodedByte =0;
+    mqtt_txlen =0;
+    memset(mqtt_txbuf,0,mqtt_txlen);
     Datalen =2+(topiclen+2)+(whether?1:0);
 
 //控制报文
@@ -259,6 +265,8 @@ do{
 mqtt_txbuf[mqtt_txlen++]=0x00;                          //MSB
 mqtt_txbuf[mqtt_txlen++]=0x01;                          //LSB
 
+mqtt_txbuf[mqtt_txlen++]=BYTE1(topiclen);
+mqtt_txbuf[mqtt_txlen++]=BYTE0(topiclen);
 memcpy(&mqtt_txbuf[mqtt_txlen],topic,topiclen);
 mqtt_txlen +=topiclen;
 
@@ -266,6 +274,23 @@ if(whether)
 {
     mqtt_txbuf[mqtt_txlen++]=qos;
 }
+while(cnt--)
+{
+    memset(USART2_RX_BUF,0,sizeof(USART2_RX_BUF));
+    MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
+    wait=30;
+    while(wait--)
+    {
+        if(USART2_RX_BUF[0]==parket_subAck[0]&&USART2_RX_BUF[1]==parket_subAck[1])
+        {
+            printf("subAck[0]=%d\r\n",USART2_RX_BUF[0]);
+            return 1;            //订阅成功
+        }
+        delay_ms(100);
+    }
+}
+if(cnt) return 1;  //订阅成功
+return 0;
 
 
 }

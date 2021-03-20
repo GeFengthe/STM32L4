@@ -21,63 +21,25 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-C:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
+c:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
 Project File Date:  03/13/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling mqtt.c...
-.\APP\inc\mqtt.h(23): warning:  #1-D: last line of file ends without a newline
+.\APP\inc\mqtt.h(22): warning:  #1-D: last line of file ends without a newline
   #endif
 .\BSP\inc\timer.h(7): warning:  #1-D: last line of file ends without a newline
   #endif
-.\BSP\inc\esp8266.h(41): warning:  #1-D: last line of file ends without a newline
+.\BSP\inc\esp8266.h(42): warning:  #1-D: last line of file ends without a newline
   #endif
-APP\src\mqtt.c(77): warning:  #177-D: variable "i"  was declared but never referenced
-      u8 i,j;
-APP\src\mqtt.c(77): warning:  #177-D: variable "j"  was declared but never referenced
-      u8 i,j;
-APP\src\mqtt.c(271): warning:  #1-D: last line of file ends without a newline
+APP\src\mqtt.c(296): warning:  #1-D: last line of file ends without a newline
   }
-APP\src\mqtt.c(271): warning:  #940-D: missing return statement at end of non-void function "MQTT_SubsrcibeTopic" 
-  }
-APP\src\mqtt.c(231): warning:  #177-D: variable "i"  was declared but never referenced
-      uint8_t i,j;
-APP\src\mqtt.c(231): warning:  #177-D: variable "j"  was declared but never referenced
-      uint8_t i,j;
-APP\src\mqtt.c: 9 warnings, 0 errors
-compiling main.c...
-.\BSP\inc\spi.h(10): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\BSP\inc\lcd.h(52): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\BSP\inc\timer.h(7): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\BSP\inc\esp8266.h(41): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\APP\inc\mqtt.h(23): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\APP\inc\aht10.h(34): warning:  #1-D: last line of file ends without a newline
-  #endif
-User\main.c(74): warning:  #191-D: type qualifier is meaningless on cast type
-  						  (const uint16_t)512,							//任务栈大小
-User\main.c(99): warning:  #191-D: type qualifier is meaningless on cast type
-                            (const uint16_t)512*5,
-User\main.c(97): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
-      xReturn = xTaskCreate((TaskHandle_t )IOT_Esp8266,
-User\main.c(110): warning:  #191-D: type qualifier is meaningless on cast type
-                            (const uint16_t)512,
-User\main.c(108): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
-      xReturn = xTaskCreate((TaskHandle_t )IOT_Contral,
-User\main.c(228): warning:  #223-D: function "ESP8266_ConnectServer" declared implicitly
-          if(ESP8266_ConnectServer("TCP",MQTT_BROKERADDRESS,1883)!=0)
-User\main.c(263): warning:  #1-D: last line of file ends without a newline
-  }
-User\main.c: 13 warnings, 0 errors
+APP\src\mqtt.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=21588 RO-data=724 RW-data=136 ZI-data=22616  
-".\Objects\IOT-HAL.axf" - 0 Error(s), 22 Warning(s).
+Program Size: Code=23688 RO-data=632 RW-data=160 ZI-data=23392  
+".\Objects\IOT-HAL.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -91,7 +53,7 @@ Package Vendor: Keil
   E:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:10
+Build Time Elapsed:  00:00:12
 </pre>
 </body>
 </html>

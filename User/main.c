@@ -11,6 +11,7 @@
 #include "semphr.h"             //使用信号量要包含的头文件
 #include "mqtt.h"
 #include "aht10.h"
+#include "timers.h"
 
 
 #define LED_R_Pin               GPIO_PIN_7
@@ -40,6 +41,7 @@ void LED_Init(void);
 static void appmain(void *parameter);
 static void IOT_Esp8266(void *parameter);
 static void IOT_Contral(void *parameter);
+static void MQTT_CreateHeartTimer(void);
 
 
 //MQTT业务初始化
@@ -54,6 +56,9 @@ static TaskHandle_t IOTContral_Handle =NULL;
 
 //信号量
 SemaphoreHandle_t esp8266_Semaphore;                                    //ESP8266信号量
+
+//定时器
+ TimerHandle_t MQTT_HeartTimer =NULL;
 
 //MQTT数据上报缓存区
 char mqtt_message[300];
@@ -98,7 +103,7 @@ static void appmain(void *parameter)
                           (const char *)"ESP8266",
                           (const uint16_t)512*5,
                           (void *)NULL,
-                          (UBaseType_t)3,
+                          (UBaseType_t)4,
                           (TaskHandle_t *)&ESP8266_Handle);
 
     if(pdPASS !=xReturn)
@@ -109,7 +114,7 @@ static void appmain(void *parameter)
                           (const char *)"Contral",
                           (const uint16_t)512,
                           (void *)NULL,
-                          (UBaseType_t)2,
+                          (UBaseType_t)3,
                           (TaskHandle_t *)&IOTContral_Handle);
     if(pdPASS !=xReturn)
     {
@@ -122,28 +127,30 @@ static void appmain(void *parameter)
 
 void IOT_Esp8266(void *parameter)
 {
-    uint8_t tcnt=0;
+    // uint8_t cnt=1;
     AHT10_Init();
     ESP8266_MQTT_Init();
     float temp,hum;
     while(1)
     {
-        if(tcnt %10 ==0)
-        {
+//        if(tcnt %10 ==0)
+//        {
+            delay_ms(1000);
             temp =AHT10_Read_Temperature();
             hum =AHT10_Read_Humidity();
-            sprintf(mqtt_message,
-            "{\"method\":\"thing.service.property.set\",\"id\":\"0000000001\",\"params\":{\
-                                \"temperature\":%.1f,\
-                                \"humidity\":%.1f\
-                                },\"version\":\"1.0\"}",
-                                temp,hum);
-            MQTT_PublishData_Pack(MQTT_PUBLISH_TOPIC,mqtt_message,0);
+            sprintf(mqtt_message,"{\"method\":\"thing.service.property.set\",\"id\":\"303155086\",\"params\":{\"temperature\":%.1f,\"humidity\":%.1f},\"version\":\"1.0.0\"}",temp,hum);
+            // MQTT_PublishData_Pack(MQTT_PUBLISH_TOPIC,mqtt_message,0);
             printf(" temp =%.1f,  hum=%.1f\r\n",temp,hum);
-            // MQTT_SendHeart();
-            delay_ms(5500);
-        }
-        tcnt++;
+            if((USART2_RX_STA & (1<<15))==1)
+            {
+                USART2_RX_STA &=0x7FFF;
+                printf("%s\r\n",USART2_RX_BUF);
+                USART2_RX_STA =0;
+            }
+            // 
+//            delay_ms(5500);
+//        }
+//        tcnt++;
 
     }
 
@@ -239,9 +246,19 @@ void ESP8266_MQTT_Init(void)
         if(MQTT_Connect_Pack(MQTT_CLIENTID,MQTT_USARNAME,MQTT_PASSWORD) !=0)
         {
             printf("ESP8266阿里云MQTT登录成功!\r\n");
+            MQTT_CreateHeartTimer();
             status++;
         }else{
             Enter_ErrorMode(3);
+        }
+    }
+    if(status==4)
+    {
+        if(MQTT_SubsrcibeTopic(MQTT_SUBSCRIBE_TOPIC,0,1)!=0)
+        {
+            printf("ESP8266订阅成功");
+        }else{
+            Enter_ErrorMode(4);
         }
     }
 }
@@ -260,4 +277,26 @@ void LED_Init(void)
     HAL_GPIO_Init(GPIOE,&GPIO_InitStructure);
     
     HAL_GPIO_WritePin(GPIOE,GPIO_PIN_7,GPIO_PIN_SET);
+}
+
+void MQTT_HeartTimer_Handler(TimerHandle_t xTimer)
+{
+    MQTT_SendHeart();
+    printf("MQTT Heart timer running\r\n");
+}
+
+//发送心跳定时器
+void MQTT_CreateHeartTimer(void)
+{
+    if(MQTT_HeartTimer ==NULL)
+    {
+        MQTT_HeartTimer = xTimerCreate((const char*)"MQTT_Heart",1000*55,pdTRUE,(void *)1,MQTT_HeartTimer_Handler);
+    }
+    if(MQTT_HeartTimer!=NULL)
+    {
+        xTimerStart(MQTT_HeartTimer,0);
+    }
+    
+
+
 }

@@ -109,3 +109,4 @@
 .\objects\main.o: .\FreeRTOS\port\include\semphr.h
 .\objects\main.o: .\APP\inc\mqtt.h
 .\objects\main.o: .\APP\inc\aht10.h
+.\objects\main.o: .\FreeRTOS\port\include\timers.h
