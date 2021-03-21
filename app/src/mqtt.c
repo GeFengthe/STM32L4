@@ -154,6 +154,7 @@ uint8_t MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
         {
             if(USART2_RX_BUF[0]==parket_connetAck[0] && USART2_RX_BUF[1]==parket_connetAck[1])
             {
+                USART2_RX_STA =0;
                 return 1;
             }
             delay_ms(100);
@@ -238,7 +239,7 @@ uint8_t MQTT_SubsrcibeTopic(char *topic,uint8_t qos,uint8_t whether)
     int Datalen =0;
     uint8_t encodedByte =0;
     mqtt_txlen =0;
-    memset(mqtt_txbuf,0,mqtt_txlen);
+    memset(mqtt_txbuf,0,256);
     Datalen =2+(topiclen+2)+(whether?1:0);
 
 //控制报文
@@ -284,6 +285,7 @@ while(cnt--)
         if(USART2_RX_BUF[0]==parket_subAck[0]&&USART2_RX_BUF[1]==parket_subAck[1])
         {
             printf("subAck[0]=%d\r\n",USART2_RX_BUF[0]);
+            USART2_RX_STA=0;
             return 1;            //订阅成功
         }
         delay_ms(100);

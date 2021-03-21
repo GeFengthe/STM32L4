@@ -117,9 +117,13 @@ void USART2_IRQHandler(void)
             {
                 USART2_RX_STA|=1<<15;
             }
+        }else
+        {
+            USART2_RX_STA =0;
         }
-        __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
+        
     }
+    __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
 }
 
 //向ESP8266发送定长数据

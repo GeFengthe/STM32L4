@@ -21,25 +21,27 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-c:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
+C:\Users\sky\Desktop\STML4-HAL\STM32-HAL-FreeRTOS\IOT-HAL.uvprojx
 Project File Date:  03/13/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling mqtt.c...
-.\APP\inc\mqtt.h(22): warning:  #1-D: last line of file ends without a newline
-  #endif
+compiling esp8266.c...
 .\BSP\inc\timer.h(7): warning:  #1-D: last line of file ends without a newline
   #endif
 .\BSP\inc\esp8266.h(42): warning:  #1-D: last line of file ends without a newline
   #endif
-APP\src\mqtt.c(296): warning:  #1-D: last line of file ends without a newline
-  }
-APP\src\mqtt.c: 4 warnings, 0 errors
+BSP\src\esp8266.c(342): warning:  #68-D: integer conversion resulted in a change of sign
+              return -1;
+BSP\src\esp8266.c(491): warning:  #177-D: variable "p"  was declared but never referenced
+  	u8 p[50];
+BSP\src\esp8266.c(540): warning:  #1-D: last line of file ends without a newline
+  //}
+BSP\src\esp8266.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=23688 RO-data=632 RW-data=160 ZI-data=23392  
-".\Objects\IOT-HAL.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=23716 RO-data=632 RW-data=160 ZI-data=23392  
+".\Objects\IOT-HAL.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,7 +55,7 @@ Package Vendor: Keil
   E:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:12
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>
