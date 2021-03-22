@@ -21,6 +21,7 @@
 void init_uart2(void);
 
 extern uint16_t USART2_RX_STA;   //接收完成标志
+extern uint16_t USART2_RX_LEN;
 extern uint8_t USART2_RX_BUF[1024];
 
 uint8_t atk_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime);

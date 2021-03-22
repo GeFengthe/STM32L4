@@ -73,7 +73,7 @@ void uart_init(u32 bound)
 
     __HAL_UART_ENABLE_IT(&UART1_Handler, UART_IT_RXNE); //开启接收中断
     HAL_NVIC_EnableIRQ(USART1_IRQn);					//使能USART1中断通道
-    HAL_NVIC_SetPriority(USART1_IRQn, 3, 3);				//抢占优先级3，子优先级3
+    HAL_NVIC_SetPriority(USART1_IRQn, 3, 0);				//抢占优先级3，子优先级3
 }
 
 

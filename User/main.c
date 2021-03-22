@@ -131,6 +131,7 @@ void IOT_Esp8266(void *parameter)
     AHT10_Init();
     ESP8266_MQTT_Init();
     float temp,hum;
+    USART2_RX_STA=0;
     while(1)
     {
 //        if(tcnt %10 ==0)
@@ -141,10 +142,15 @@ void IOT_Esp8266(void *parameter)
             sprintf(mqtt_message,"{\"method\":\"thing.service.property.set\",\"id\":\"303155086\",\"params\":{\"temperature\":%.1f,\"humidity\":%.1f},\"version\":\"1.0.0\"}",temp,hum);
             // MQTT_PublishData_Pack(MQTT_PUBLISH_TOPIC,mqtt_message,0);
             printf(" temp =%.1f,  hum=%.1f\r\n",temp,hum);
-            if((USART2_RX_STA & (1<<15))==1)
+            printf("USART2_RX_STA=%d\r\n",USART2_RX_STA);
+            if(USART2_RX_STA ==1)
             {
-                USART2_RX_STA &=0x7FFF;
-                printf("%s\r\n",USART2_RX_BUF);
+                for(uint16_t i=0;i<USART2_RX_LEN;i++)
+                {
+                    printf("0x%x   ",USART2_RX_BUF[i]);
+                }
+                printf("\r\n");
+                USART2_RX_LEN =0;
                 USART2_RX_STA =0;
             }
             // 

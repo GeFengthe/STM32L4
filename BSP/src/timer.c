@@ -27,7 +27,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim)
 
 void TIM7_IRQHandler(void)
 {
-    USART2_RX_STA |=1<<15;                               //标记接收完成
+    USART2_RX_STA =1;                               //标记接收完成
     printf("TIM7 IS HANDLER\r\n");
     __HAL_TIM_CLEAR_FLAG(&TIM7_Handler,TIM_EventSource_Update);     //清除TIM7更新中断标志
     TIM7->CR1 &=~(1<<0);                                 //关闭定时器7

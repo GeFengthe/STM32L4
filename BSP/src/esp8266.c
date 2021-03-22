@@ -12,6 +12,7 @@ WIFI :HUAWEI-2303
 
 
 uint16_t USART2_RX_STA =0;              //接收结束标志
+uint16_t USART2_RX_LEN =0;
 static uint8_t USART2_TX_BUF[1024];     //发送BUFF
 uint8_t USART2_RX_BUF[1024];
 
@@ -69,6 +70,7 @@ void init_uart2(void)
     HAL_NVIC_SetPriority(USART2_IRQn,2,0);
     init_TIM7(1000,7999);                                       //100ms 中断
     USART2_RX_STA =0;
+    USART2_RX_LEN =0;
     TIM7->CR1 &=~(1<<0);                                        //关闭定时器7
 }
 
@@ -103,27 +105,23 @@ void USART2_IRQHandler(void)
     if(__HAL_UART_GET_IT(&UART2_Hander,UART_IT_RXNE) !=RESET)       //接收到数据
     {
         res =USART2->RDR;
-        if((USART2_RX_STA &(1<<15))==0)
+        if(USART2_RX_STA==0)
         {
-            if(USART2_RX_STA <1024)
+            if(USART2_RX_LEN <1024)
             {
                 TIM7->CNT =0;                                           //计数器清空
-                if(USART2_RX_STA==0)
+                if(USART2_RX_LEN==0)
                 {
                     TIM7->CR1 |=1<<0;                                   //使能定时器7
                 }
-                USART2_RX_BUF[USART2_RX_STA++]=res;
+                USART2_RX_BUF[USART2_RX_LEN++]=res;
             }else
             {
-                USART2_RX_STA|=1<<15;
+                USART2_RX_STA=1;
             }
-        }else
-        {
-            USART2_RX_STA =0;
         }
-        
     }
-    __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
+   HAL_UART_IRQHandler(&UART2_Hander);
 }
 
 //向ESP8266发送定长数据
@@ -131,6 +129,7 @@ void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)
 {
     memset(USART2_RX_BUF,0,1024);
     USART2_RX_STA =0;                   //接收标志置0
+    USART2_RX_LEN =0;
     //定长发送
     HAL_UART_Transmit(&UART2_Hander,buf,len,0xFFFF);
 
@@ -140,6 +139,7 @@ void ESP8266_ATSendString(char * str)
 {
     memset( USART2_RX_BUF,0,1024);
     USART2_RX_STA =0;
+    USART2_RX_LEN =0;
     while(*str)     USART2_SendOneByte(*str++);
 }
 
