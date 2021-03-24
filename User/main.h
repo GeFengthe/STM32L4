@@ -1,12 +1,16 @@
 /**
   ******************************************************************************
-  * @file    Templates/Inc/main.h 
-  * @author  MCD Application Team
-  * @brief   Header for main.c module
+  * @file           : main.h
+  * @brief          : Header for main.c file.
+  *                   This file contains the common defines of the application.
   ******************************************************************************
-  * @attention
+  ** This notice applies to any and all portions of this file
+  * that are not between comment pairs USER CODE BEGIN and
+  * USER CODE END. Other portions of this file, whether 
+  * inserted by the user or by software development tools
+  * are owned by their respective copyright owners.
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
+  * COPYRIGHT(c) 2019 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -32,19 +36,28 @@
   *
   ******************************************************************************
   */
-  
+
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef __MAIN_H__
+#define __MAIN_H__
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 
-/* Exported types ------------------------------------------------------------*/
-/* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
+/* USER CODE BEGIN Includes */
 
-#endif /* __MAIN_H */
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+
+/* USER CODE BEGIN Private defines */
+
+/* USER CODE END Private defines */
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+#endif /* __MAIN_H__ */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
