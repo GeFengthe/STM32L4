@@ -105,3 +105,8 @@
 .\objects\main.o: ..\FreeRTOS\port\include\mpu_wrappers.h
 .\objects\main.o: ..\FreeRTOS\port\include\task.h
 .\objects\main.o: ..\FreeRTOS\port\include\list.h
+.\objects\main.o: ..\FreeRTOS\port\include\queue.h
+.\objects\main.o: ..\FreeRTOS\port\include\semphr.h
+.\objects\main.o: ..\app\inc\mqtt.h
+.\objects\main.o: ..\app\inc\aht10.h
+.\objects\main.o: ..\FreeRTOS\port\include\timers.h

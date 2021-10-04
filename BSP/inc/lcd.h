@@ -47,6 +47,6 @@
 #define	LCD_CS(n)		(n?HAL_GPIO_WritePin(GPIOD,GPIO_PIN_7,GPIO_PIN_SET):HAL_GPIO_WritePin(GPIOD,GPIO_PIN_7,GPIO_PIN_RESET))
 void LCD_Init(void);
 void LCD_Clean(uint16_t color);
-void LCD_ShowChar(uint16_t x, uint16_t y, char chr, uint8_t size);
-
+extern void LCD_ShowChar(uint16_t x, uint16_t y, char chr, uint8_t size);
+extern void LCD_ShowString(uint16_t x,uint16_t y,uint16_t width,uint16_t height,uint8_t size,char *p);
 #endif

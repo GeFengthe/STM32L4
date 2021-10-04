@@ -43,13 +43,13 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef *hspi)
 uint8_t SPI3_ReadWriteByte(uint8_t TxData)
 {
 	uint8_t Rxdata;
-	Rxdata =HAL_SPI_TransmitReceive(&SPI_HandleStruct,&TxData , &Rxdata,1,1000);
+	Rxdata =HAL_SPI_TransmitReceive(&SPI_HandleStruct,&TxData , &Rxdata,1,300);
 	return Rxdata;
 }
 
 //Ð´Ò»¸ö×Ö½Ú
 uint8_t SPI3_WriteByte(uint8_t *Txdata,uint16_t size)
 {
-	return HAL_SPI_Transmit(&SPI_HandleStruct,Txdata, size, 1000);
+	return HAL_SPI_Transmit(&SPI_HandleStruct,Txdata, size, 300);
 	
 }

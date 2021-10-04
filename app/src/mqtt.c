@@ -149,7 +149,7 @@ uint8_t MQTT_Connect_Pack(char *ClientID,char *Username,char *Password)
     {
         memset(USART2_RX_BUF,0,sizeof(USART2_RX_BUF));
         MQTT_SendBuf(mqtt_txbuf,mqtt_txlen);
-        wait=50;
+        wait=30;
         while(wait--)
         {
             if(USART2_RX_BUF[0]==parket_connetAck[0] && USART2_RX_BUF[1]==parket_connetAck[1])

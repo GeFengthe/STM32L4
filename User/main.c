@@ -66,13 +66,13 @@ char mqtt_message[300];
 int main()
 {
 	BaseType_t xReturn =pdPASS;
-//    HAL_Init();
+    HAL_Init();
     HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SystemClock_Config();
     LED_Init();
     init_uart2();
     uart_init(115200);
-    
+    // ESP8266_MQTT_Init();    
 //    init_uart2();
 	xReturn = xTaskCreate((TaskFunction_t )appmain,						//任务入口函数
 						  (const char *)"appmain",						//任务名字
@@ -94,6 +94,10 @@ static void appmain(void *parameter)
 {
     BaseType_t xReturn =pdPASS;
     taskENTER_CRITICAL();                                               //进入临界区
+    AHT10_Init();
+    LCD_Init();
+    LCD_ShowString(0, 100, 240, 16, 16,"temp: ");
+    LCD_ShowString(100, 100, 140, 16, 16, "55");
     esp8266_Semaphore =xSemaphoreCreateBinary();                        //创建信号量
     if(esp8266_Semaphore ==NULL)
     {
@@ -128,8 +132,6 @@ static void appmain(void *parameter)
 void IOT_Esp8266(void *parameter)
 {
     // uint8_t cnt=1;
-    AHT10_Init();
-    ESP8266_MQTT_Init();
     float temp,hum;
     USART2_RX_STA=0;
     while(1)
@@ -143,16 +145,16 @@ void IOT_Esp8266(void *parameter)
             // MQTT_PublishData_Pack(MQTT_PUBLISH_TOPIC,mqtt_message,0);
             printf(" temp =%.1f,  hum=%.1f\r\n",temp,hum);
             printf("USART2_RX_STA=%d\r\n",USART2_RX_STA);
-            if(USART2_RX_STA ==1)
-            {
-                for(uint16_t i=0;i<USART2_RX_LEN;i++)
-                {
-                    printf("0x%x   ",USART2_RX_BUF[i]);
-                }
-                printf("\r\n");
-                USART2_RX_LEN =0;
-                USART2_RX_STA =0;
-            }
+            // if(USART2_RX_STA ==1)
+            // {
+            //     for(uint16_t i=0;i<USART2_RX_LEN;i++)
+            //     {
+            //         printf("0x%x   ",USART2_RX_BUF[i]);
+            //     }
+            //     printf("\r\n");
+            //     USART2_RX_LEN =0;
+            //     USART2_RX_STA =0;
+            // }
             // 
 //            delay_ms(5500);
 //        }
@@ -296,13 +298,11 @@ void MQTT_CreateHeartTimer(void)
 {
     if(MQTT_HeartTimer ==NULL)
     {
-        MQTT_HeartTimer = xTimerCreate((const char*)"MQTT_Heart",1000*55,pdTRUE,(void *)1,MQTT_HeartTimer_Handler);
+        MQTT_HeartTimer = xTimerCreate((const char*)"MQTT_Heart",1000*60,pdTRUE,(void *)1,MQTT_HeartTimer_Handler);
     }
     if(MQTT_HeartTimer!=NULL)
     {
         xTimerStart(MQTT_HeartTimer,0);
     }
     
-
-
 }
