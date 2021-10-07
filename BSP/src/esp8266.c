@@ -38,39 +38,39 @@ const char sta_ap[] ="AT+CWMODE=3";     //STA_AP模式
 UART_HandleTypeDef         UART2_Hander;
 
 
-void init_uart2(void)
-{
-    GPIO_InitTypeDef    GPIO_InitStruct;
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_USART2_CLK_ENABLE();
-    
-    GPIO_InitStruct.Pin = UART2_TX_PIN;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
-    HAL_GPIO_Init(GPIOA,&GPIO_InitStruct);
-    
-    GPIO_InitStruct.Pin = UART2_RX_PIN;
-    HAL_GPIO_Init(GPIOA,&GPIO_InitStruct);
-    
-    UART2_Hander.Instance =USART2;
-    UART2_Hander.Init.BaudRate = 115200;
-    UART2_Hander.Init.Parity =UART_PARITY_NONE;
-    UART2_Hander.Init.WordLength = UART_WORDLENGTH_8B;
-    UART2_Hander.Init.StopBits = UART_STOPBITS_1;
-    UART2_Hander.Init.Mode = UART_MODE_TX_RX;
-    UART2_Hander.Init.HwFlowCtl = UART_HWCONTROL_NONE;                      //无硬件控制               
-    HAL_UART_Init(&UART2_Hander);
-    
-    __HAL_UART_CLEAR_FLAG(&UART2_Hander,UART_FLAG_RXNE);
-    __HAL_UART_ENABLE_IT(&UART2_Hander,USART_IT_RXNE);
-    HAL_NVIC_EnableIRQ(USART2_IRQn);
-    HAL_NVIC_SetPriority(USART2_IRQn,2,0);
-    init_TIM7(1000,7999);                                       //100ms 中断
-    USART2_RX_STA =0;
-    TIM7->CR1 &=~(1<<0);                                        //关闭定时器7
-}
+//void init_uart2(void)
+//{
+//    GPIO_InitTypeDef    GPIO_InitStruct;
+//    __HAL_RCC_GPIOA_CLK_ENABLE();
+//    __HAL_RCC_USART2_CLK_ENABLE();
+//    
+//    GPIO_InitStruct.Pin = UART2_TX_PIN;
+//    GPIO_InitStruct.Pull = GPIO_PULLUP;
+//    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+//    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+//    GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
+//    HAL_GPIO_Init(GPIOA,&GPIO_InitStruct);
+//    
+//    GPIO_InitStruct.Pin = UART2_RX_PIN;
+//    HAL_GPIO_Init(GPIOA,&GPIO_InitStruct);
+//    
+//    UART2_Hander.Instance =USART2;
+//    UART2_Hander.Init.BaudRate = 115200;
+//    UART2_Hander.Init.Parity =UART_PARITY_NONE;
+//    UART2_Hander.Init.WordLength = UART_WORDLENGTH_8B;
+//    UART2_Hander.Init.StopBits = UART_STOPBITS_1;
+//    UART2_Hander.Init.Mode = UART_MODE_TX_RX;
+//    UART2_Hander.Init.HwFlowCtl = UART_HWCONTROL_NONE;                      //无硬件控制               
+//    HAL_UART_Init(&UART2_Hander);
+//    
+//    __HAL_UART_CLEAR_FLAG(&UART2_Hander,UART_FLAG_RXNE);
+//    __HAL_UART_ENABLE_IT(&UART2_Hander,USART_IT_RXNE);
+//    HAL_NVIC_EnableIRQ(USART2_IRQn);
+//    HAL_NVIC_SetPriority(USART2_IRQn,2,0);
+//    init_TIM7(1000,7999);                                       //100ms 中断
+//    USART2_RX_STA =0;
+//    TIM7->CR1 &=~(1<<0);                                        //关闭定时器7
+//}
 
 
 //串口3,printf 函数
@@ -97,30 +97,30 @@ static void USART2_SendOneByte(uint8_t byte)
     while((((UART_HandleTypeDef *)&UART2_Hander)->Instance->ISR&0x40)==0);                          //等待发送完成
 }
 
-void USART2_IRQHandler(void)
-{
-    uint8_t res;
-    if(__HAL_UART_GET_IT(&UART2_Hander,UART_IT_RXNE) !=RESET)       //接收到数据
-    {
-        res =USART2->RDR;
-        if((USART2_RX_STA &(1<<15))==0)
-        {
-            if(USART2_RX_STA <1024)
-            {
-                TIM7->CNT =0;                                           //计数器清空
-                if(USART2_RX_STA==0)
-                {
-                    TIM7->CR1 |=1<<0;                                   //使能定时器7
-                }
-                USART2_RX_BUF[USART2_RX_STA++]=res;
-            }else
-            {
-                USART2_RX_STA|=1<<15;
-            }
-        }
-    }
-    __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
-}
+//void USART2_IRQHandler(void)
+//{
+//    uint8_t res;
+//    if(__HAL_UART_GET_IT(&UART2_Hander,UART_IT_RXNE) !=RESET)       //接收到数据
+//    {
+//        res =USART2->RDR;
+//        if((USART2_RX_STA &(1<<15))==0)
+//        {
+//            if(USART2_RX_STA <1024)
+//            {
+//                TIM7->CNT =0;                                           //计数器清空
+//                if(USART2_RX_STA==0)
+//                {
+//                    TIM7->CR1 |=1<<0;                                   //使能定时器7
+//                }
+//                USART2_RX_BUF[USART2_RX_STA++]=res;
+//            }else
+//            {
+//                USART2_RX_STA|=1<<15;
+//            }
+//        }
+//    }
+//    __HAL_UART_CLEAR_IT(&UART2_Hander,UART_IT_RXNE);
+//}
 
 //向ESP8266发送定长数据
 void ESP8266_ATSendBuf(uint8_t *buf,uint16_t len)

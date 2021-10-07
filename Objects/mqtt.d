@@ -94,3 +94,5 @@
 .\objects\mqtt.o: .\System\sys\sys.h
 .\objects\mqtt.o: .\System\delay\delay.h
 .\objects\mqtt.o: .\BSP\inc\timer.h
+.\objects\mqtt.o: .\BSP\inc\uart2.h
+.\objects\mqtt.o: .\BSP\inc\timer.h

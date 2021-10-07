@@ -87,6 +87,8 @@
 .\objects\timer.o: .\libraries\Inc\stm32l4xx_hal_pcd_ex.h
 .\objects\timer.o: .\libraries\Inc\stm32l4xx_hal_hcd.h
 .\objects\timer.o: .\libraries\Inc\stm32l4xx_hal_gfxmmu.h
+.\objects\timer.o: .\BSP\inc\uart2.h
+.\objects\timer.o: .\BSP\inc\timer.h
 .\objects\timer.o: .\BSP\inc\esp8266.h
 .\objects\timer.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\timer.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

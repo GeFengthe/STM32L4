@@ -804,6 +804,11 @@
               <FileType>1</FileType>
               <FilePath>.\BSP\src\timer.c</FilePath>
             </File>
+            <File>
+              <FileName>uart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\src\uart2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -828,6 +833,11 @@
               <FileName>motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\APP\src\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266_at.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\src\esp8266_at.c</FilePath>
             </File>
           </Files>
         </Group>

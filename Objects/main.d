@@ -96,6 +96,8 @@
 .\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: .\BSP\inc\timer.h
+.\objects\main.o: .\BSP\inc\uart2.h
+.\objects\main.o: .\BSP\inc\timer.h
 .\objects\main.o: .\FreeRTOS\port\include\FreeRTOS.h
 .\objects\main.o: .\User\FreeRTOSConfig.h
 .\objects\main.o: .\FreeRTOS\port\include\projdefs.h
@@ -110,3 +112,4 @@
 .\objects\main.o: .\APP\inc\mqtt.h
 .\objects\main.o: .\APP\inc\aht10.h
 .\objects\main.o: .\FreeRTOS\port\include\timers.h
+.\objects\main.o: .\APP\inc\esp8266_at.h

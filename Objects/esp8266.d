@@ -93,3 +93,5 @@
 .\objects\esp8266.o: .\System\sys\sys.h
 .\objects\esp8266.o: .\System\delay\delay.h
 .\objects\esp8266.o: .\BSP\inc\timer.h
+.\objects\esp8266.o: .\BSP\inc\uart2.h
+.\objects\esp8266.o: .\BSP\inc\timer.h

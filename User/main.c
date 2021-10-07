@@ -12,6 +12,7 @@
 #include "mqtt.h"
 #include "aht10.h"
 #include "timers.h"
+#include "esp8266_at.h"
 
 
 #define LED_R_Pin               GPIO_PIN_7
@@ -70,24 +71,39 @@ int main()
     HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SystemClock_Config();
     LED_Init();
-    init_uart2();
-    uart_init(115200);
-    // ESP8266_MQTT_Init();    
 //    init_uart2();
-	xReturn = xTaskCreate((TaskFunction_t )appmain,						//任务入口函数
-						  (const char *)"appmain",						//任务名字
-						  (const uint16_t)512,							//任务栈大小
-						  (void *)NULL,									//任务入口函数参数
-						  (UBaseType_t) 1,								//任务优先级
-						  (TaskHandle_t *)&AppMain_Handle);				//任务句柄
-	if(pdPASS ==xReturn)
-		vTaskStartScheduler();
-	else
-		return -1;
+    uart_init(115200);
+    Tim7_init();
+    uart2_init();
+    esp8266_init();
+//    Star_at_waittim(100);               //
     while(1)
     {
-        
-    }    
+       if((uart2_sta.uart_rx_sta &0x8000) ==0x8000)
+       {
+           uart2_sta.uart_rx_sta &=0x7F;
+           printf("esp8266 :%d  :%s",uart2_sta.uart_rx_sta,uart2_sta.uart_rx_buf);
+           uart2_sta.uart_rx_sta =0;
+       }
+//       printf("running\r\n");
+//       delay_ms(1000);
+    }
+    // ESP8266_MQTT_Init();    
+//    init_uart2();
+//	xReturn = xTaskCreate((TaskFunction_t )appmain,						//任务入口函数
+//						  (const char *)"appmain",						//任务名字
+//						  (const uint16_t)512,							//任务栈大小
+//						  (void *)NULL,									//任务入口函数参数
+//						  (UBaseType_t) 1,								//任务优先级
+//						  (TaskHandle_t *)&AppMain_Handle);				//任务句柄
+//	if(pdPASS ==xReturn)
+//		vTaskStartScheduler();
+//	else
+//		return -1;
+//    while(1)
+//    {
+//        
+//    }    
 }
 
 static void appmain(void *parameter)

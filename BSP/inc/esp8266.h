@@ -16,7 +16,6 @@
 
 */
 #define   UART2_TX_PIN              GPIO_PIN_2
-
 #define   UART2_RX_PIN              GPIO_PIN_3
 void init_uart2(void);
 
