@@ -1,6 +1,7 @@
 #ifndef __ESP8266_H
 #define __ESP8266_H
-
+#include "FreeRTOS.h"
+#include "semphr.h"
 
 typedef struct {
     unsigned char *at_cmd;                                         //at指令
@@ -18,7 +19,24 @@ typedef struct {
     unsigned int tcp_send_len;          
 }__esp8266_at_com;
 
+enum{
+    ESP8266_SEMAPH =0,
+}semaphr_binary;
+
+//AT指令工作处理
+enum{
+    AT_TYPE_CHECK   =0,                                         //检查模块是否存在
+    AT_TYPE_CLOSE_SHOW,                                         //关闭回显
+}AT_TYPE;
+
 extern __esp8266_at_com ESP8266_AT_COM;
 
+extern SemaphoreHandle_t sky_semaph[3];                                        //三个信号量
+
 void Star_at_waittim(unsigned int tim);
+extern void esp8266_thread_init(void);
+
+extern void AT_CheckSend(void);
+extern void AT_Mode_Correct_Check(unsigned char *at_ack_buf);
+
 #endif

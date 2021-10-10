@@ -27,41 +27,14 @@ Project File Date:  10/07/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
-.\BSP\inc\spi.h(10): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\BSP\inc\lcd.h(52): warning:  #1-D: last line of file ends without a newline
-  #endif
+compiling uart2.c...
 .\BSP\inc\timer.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-.\BSP\inc\timer.h(24): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\BSP\inc\esp8266.h(42): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\APP\inc\mqtt.h(22): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\APP\inc\aht10.h(34): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\APP\inc\esp8266_at.h(24): warning:  #1-D: last line of file ends without a newline
-  #endif
-User\main.c(69): warning:  #177-D: variable "xReturn"  was declared but never referenced
-  	BaseType_t xReturn =pdPASS;
-User\main.c(124): warning:  #191-D: type qualifier is meaningless on cast type
-                            (const uint16_t)512*5,
-User\main.c(122): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
-      xReturn = xTaskCreate((TaskHandle_t )IOT_Esp8266,
-User\main.c(135): warning:  #191-D: type qualifier is meaningless on cast type
-                            (const uint16_t)512,
-User\main.c(133): warning:  #167-D: argument of type "TaskHandle_t" is incompatible with parameter of type "TaskFunction_t"
-      xReturn = xTaskCreate((TaskHandle_t )IOT_Contral,
-User\main.c(324): warning:  #1-D: last line of file ends without a newline
-  }
-User\main.c(109): warning:  #177-D: function "appmain"  was declared but never referenced
-  static void appmain(void *parameter)
-User\main.c: 15 warnings, 0 errors
+BSP\src\uart2.c: 1 warning, 0 errors
+compiling delay.c...
 linking...
-Program Size: Code=13084 RO-data=496 RW-data=76 ZI-data=4084  
-".\Objects\IOT-HAL.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=18756 RO-data=544 RW-data=136 ZI-data=21576  
+".\Objects\IOT-HAL.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -75,7 +48,7 @@ Package Vendor: Keil
   E:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:12
+Build Time Elapsed:  00:00:11
 </pre>
 </body>
 </html>

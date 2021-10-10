@@ -4,13 +4,13 @@ void delay_us(u32 nus)
 {
 	u32 tickcnt,ticksrt,tickend;
 	u32 reload = SysTick->LOAD;                                         //获取装载值
-    u32 ticktotal =nus *80;                                           //总节拍数
+    u32 ticktotal =nus *80;                                             //总节拍数
     ticksrt =SysTick->VAL;
     while(1)
     {
         tickend =SysTick->VAL;
-        if(ticksrt >tickend)
-            tickcnt +=ticksrt -tickend;
+        if(tickend >ticksrt)
+            tickcnt +=tickend -ticksrt;
         else
             tickcnt +=reload -tickend+ticksrt;
         ticksrt =tickend;

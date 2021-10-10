@@ -98,6 +98,8 @@
 #define configUSE_16_BIT_TICKS		0
 #define configIDLE_SHOULD_YIELD		1
 
+#define configSUPPORT_DYNAMIC_ALLOCATION            1       //支持动态内存申请
+
 //软件定时器宏定义
 #define configUSE_TIMERS            1
 #define configTIMER_TASK_PRIORITY   configMAX_PRIORITIES-1

@@ -1,10 +1,20 @@
 .\objects\esp8266_at.o: APP\src\esp8266_at.c
 .\objects\esp8266_at.o: .\APP\inc\esp8266_at.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\FreeRTOS.h
+.\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\esp8266_at.o: .\User\FreeRTOSConfig.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\projdefs.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\portable.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\deprecated_definitions.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\mpu_wrappers.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\semphr.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\queue.h
 .\objects\esp8266_at.o: .\BSP\inc\uart2.h
 .\objects\esp8266_at.o: .\User\stm32l4xx.h
 .\objects\esp8266_at.o: .\User\stm32l475xx.h
 .\objects\esp8266_at.o: .\libraries\core_cm4.h
-.\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\esp8266_at.o: .\libraries\core_cmInstr.h
 .\objects\esp8266_at.o: .\libraries\cmsis_armcc.h
 .\objects\esp8266_at.o: .\libraries\core_cmFunc.h
@@ -18,7 +28,6 @@
 .\objects\esp8266_at.o: .\libraries\Inc\stm32l4xx_hal_def.h
 .\objects\esp8266_at.o: .\User\stm32l4xx.h
 .\objects\esp8266_at.o: .\libraries\Inc\Legacy/stm32_hal_legacy.h
-.\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\esp8266_at.o: .\libraries\Inc\stm32l4xx_hal_rcc_ex.h
 .\objects\esp8266_at.o: .\libraries\Inc\stm32l4xx_hal_gpio.h
 .\objects\esp8266_at.o: .\libraries\Inc\stm32l4xx_hal_gpio_ex.h
@@ -93,3 +102,5 @@
 .\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\esp8266_at.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\task.h
+.\objects\esp8266_at.o: .\FreeRTOS\port\include\list.h
