@@ -166,6 +166,7 @@ void SysTick_Handler(void)
         xPortSysTickHandler();
     #if (INCLUDE_xTaskGetSchedulerState == 1)
     #endif
+    HAL_IncTick();
 }
 
 /******************************************************************************/

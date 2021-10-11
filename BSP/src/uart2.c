@@ -22,7 +22,7 @@ void esp8266_init(void)
     HAL_GPIO_WritePin(ESP8266_Port, ESP8266_RST_Pin, GPIO_PIN_RESET);
     delay_ms(500);
     HAL_GPIO_WritePin(ESP8266_Port, ESP8266_RST_Pin, GPIO_PIN_SET);
-    delay_ms(15000);
+    delay_ms(3000);
 }
 
 void uart2_init(void)

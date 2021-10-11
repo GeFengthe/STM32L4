@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\IOT-HAL.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\IOT-HAL.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Oct 11 00:29:52 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 12 00:58:19 2021
 <BR><P>
 <H3>Maximum Stack Usage =        272 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -600,6 +600,7 @@ Global Symbols
 
 <P><STRONG><a name="[9c]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32l4xx_hal.o(i.HAL_IncTick))
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
 <P><STRONG><a name="[7e]"></a>HAL_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32l4xx_hal.o(i.HAL_Init))
@@ -622,9 +623,9 @@ Global Symbols
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 </UL>
 
 <P><STRONG><a name="[81]"></a>HAL_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l4xx_hal_msp_template.o(i.HAL_MspInit))
@@ -632,10 +633,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[83]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32l4xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
 <P><STRONG><a name="[82]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, stm32l4xx_hal_cortex.o(i.HAL_NVIC_SetPriority))
@@ -644,10 +645,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_GetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
 <P><STRONG><a name="[7f]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32l4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping))
@@ -666,8 +667,8 @@ Global Symbols
 <P><STRONG><a name="[8a]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 358 bytes, Stack size 24 bytes, stm32l4xx_hal_rcc.o(i.HAL_RCC_ClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
@@ -687,8 +688,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
 <P><STRONG><a name="[8e]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 26 bytes, Stack size 4 bytes, stm32l4xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq))
@@ -710,9 +711,9 @@ Global Symbols
 <P><STRONG><a name="[8f]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1536 bytes, Stack size 32 bytes, stm32l4xx_hal_rcc.o(i.HAL_RCC_OscConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_SetFlashLatencyFromMSIRange
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_SetFlashLatencyFromMSIRange
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
@@ -733,11 +734,11 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>HAL_TIM_Base_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32l4xx_hal_tim.o(i.HAL_TIM_Base_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim7_init
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim7_init
 </UL>
 
 <P><STRONG><a name="[91]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(i.HAL_TIM_Base_MspInit))
@@ -750,8 +751,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[87]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32l4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
-<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim7_init
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tim7_init
 </UL>
 
 <P><STRONG><a name="[94]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback))
@@ -884,19 +885,20 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_Mode_Send_Com
 </UL>
 
-<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32l4xx_it.o(i.SysTick_Handler))
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32l4xx_it.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SysTick_Handler &rArr; xPortSysTickHandler &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l475xx.o(RESET)
 </UL>
 <P><STRONG><a name="[b2]"></a>SystemClock_Config</STRONG> (Thumb, 134 bytes, Stack size 104 bytes, sys.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_ControlVoltageScaling
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_ControlVoltageScaling
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1020,7 +1022,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_init
 </UL>
 
-<P><STRONG><a name="[c3]"></a>delay_us</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, delay.o(i.delay_us))
+<P><STRONG><a name="[c3]"></a>delay_us</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, delay.o(i.delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = delay_us
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
