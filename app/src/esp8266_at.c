@@ -66,7 +66,7 @@ void AT_Mode_Send_Com(__atcom_sta *at_mode_com, unsigned char at_type)
 
 void AT_CheckSend(void)
 {
-    AT_Mode_Send_Com((__atcom_sta *)&atesp8266_tab[0], AT_TYPE_CHECK);
+    AT_Mode_Send_Com((__atcom_sta *)&atesp8266_tab[AT_TAB_CHECK], AT_TYPE_CHECK);
 }
 
 
@@ -74,7 +74,23 @@ void AT_CheckSend(void)
 //AT指令响应正确处理
 void AT_Mode_Correct_response(unsigned char *ack_buff)
 {
+    ESP8266_AT_COM.ATCOM_STA.at_ack = NULL;
+    ESP8266_AT_COM.ATCOM_STA.at_cmd = NULL;
+    ESP8266_AT_COM.ATCOM_STA.at_sendnum = 0;
+    ESP8266_AT_COM.ATCOM_STA.at_timeout = 0;
     
+    Stop_at_timer();
+    switch(ESP8266_AT_COM.at_type)
+    {
+        case AT_TYPE_CHECK:
+            AT_Mode_Send_Com((__atcom_sta *)&atesp8266_tab[AT_TAB_CLOSE_SHOE], AT_TAB_CLOSE_SHOE);
+            break;
+        case AT_TYPE_CLOSE_SHOW:
+            
+            break;
+        case AT_TYPE_ESPMODE_STA:
+            break;
+    }
 }
 
 
@@ -88,8 +104,8 @@ void AT_Mode_Correct_Check(unsigned char *at_ack_buf)
     strx = strstr((char*)at_ack_buf, (char*)ESP8266_AT_COM.ATCOM_STA.at_ack);
     if(strx !=NULL)
     {
-        printf("%s",at_ack_buf);
         printf(" ack success");
+        AT_Mode_Correct_response(at_ack_buf);
     }else
     {
         printf("%s",at_ack_buf);

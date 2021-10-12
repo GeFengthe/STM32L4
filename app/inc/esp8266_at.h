@@ -27,7 +27,25 @@ enum{
 enum{
     AT_TYPE_CHECK   =0,                                         //检查模块是否存在
     AT_TYPE_CLOSE_SHOW,                                         //关闭回显
+    AT_TYPE_ESPMODE_STA,
+    AT_TYPE_ESPMODE_SET,
+    AT_TYPE_ESPWIFI_STA,
+    AT_TYPE_ESPWIFI_SET,
+    AT_TYPE_CONNECT_SERVER,
+    AT_TYPE_DISCON_SERVER,
 }AT_TYPE;
+
+
+enum{
+    AT_TAB_CHECK =0,
+    AT_TAB_CLOSE_SHOE,
+    AT_TAB_ESPMODE_STA,
+    AT_TAB_ESPMODE_SET,
+    AT_TAB_ESPWIFI_STA,
+    AT_TAB_ESPWIFI_SET,
+    AT_TAB_CONNECT_SERVER,
+    AT_TAB_DISCON_SERVER,
+}AT_ESP8266_TAB;
 
 extern __esp8266_at_com ESP8266_AT_COM;
 
